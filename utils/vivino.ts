@@ -8,7 +8,7 @@ import {
   toSearchQuery,
   wineType,
 } from './normalize';
-import type { AlkoProduct, LookupResult } from './types';
+import type { AlkoProduct, LookupResult, WineDetails } from './types';
 
 /**
  * Vivino's own wine search is backed by Algolia. These are the public,
@@ -33,6 +33,8 @@ export interface VivinoHit {
   /** 1 red, 2 white, 3 sparkling, 4 rosé, 7 dessert, 24 fortified. */
   type_id?: number;
   statistics?: Statistics | null;
+  grapes?: number[] | null;
+  image?: { location?: string; variations?: Record<string, string> } | null;
   vintages?: { id: number; year: string; name: string; statistics?: Statistics | null }[];
 }
 
@@ -52,7 +54,7 @@ export async function searchVivino(
       hitsPerPage: 6,
       attributesToRetrieve: [
         'id', 'name', 'seo_name', 'type_id', 'winery.name', 'winery.seo_name',
-        'region.country', 'region.name', 'statistics', 'vintages',
+        'region.country', 'region.name', 'statistics', 'vintages', 'grapes', 'image',
       ],
       attributesToHighlight: [],
     }),
@@ -238,9 +240,30 @@ export function vivinoSearchUrl(query: string): string {
 }
 
 /** Builds the lookup result for a matched hit, preferring the vintage's own rating. */
+/** Vivino image URLs are protocol-relative ("//images.vivino.com/..."). */
+function absoluteImageUrl(url: string | undefined): string | undefined {
+  if (!url) return undefined;
+  return url.startsWith('//') ? `https:${url}` : url;
+}
+
+/** The details the popover shows, preferring a bottle shot over a label photo. */
+export function toDetails(hit: VivinoHit): WineDetails {
+  const images = hit.image?.variations ?? {};
+  return {
+    winery: hit.winery?.name,
+    wine: hit.name,
+    countryCode: hit.region?.country,
+    region: hit.region?.name,
+    typeId: hit.type_id,
+    grapeIds: hit.grapes?.length ? hit.grapes : undefined,
+    imageUrl: absoluteImageUrl(images.bottle_medium ?? images.label_large ?? hit.image?.location),
+  };
+}
+
 export function toResult(hit: VivinoHit, year: number | undefined): LookupResult {
   const wineName = [hit.winery?.name, hit.name].filter(Boolean).join(' ');
   const vintage = year ? hit.vintages?.find((v) => v.year === String(year)) : undefined;
+  const details = toDetails(hit);
 
   if (year && hasRating(vintage?.statistics)) {
     return {
@@ -252,6 +275,7 @@ export function toResult(hit: VivinoHit, year: number | undefined): LookupResult
       ratingsCount: vintage!.statistics!.ratings_count,
       scope: 'vintage',
       year,
+      details,
     };
   }
 
@@ -264,6 +288,9 @@ export function toResult(hit: VivinoHit, year: number | undefined): LookupResult
     rating: hasRating(stats) ? stats.ratings_average : null,
     ratingsCount: stats?.ratings_count ?? 0,
     scope: 'wine',
+    // Keep the year for display when Alko sells a vintage, even if the rating covers all of them.
+    year: vintage ? year : undefined,
+    details,
   };
 }
 

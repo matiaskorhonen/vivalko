@@ -4,7 +4,8 @@ import { createBadge, pageLanguage } from '@/utils/badge';
 import { enabledSetting, getCached } from '@/utils/cache';
 import { createLimiter } from '@/utils/limit';
 import { isWineCategory } from '@/utils/normalize';
-import type { AlkoProduct, LookupRequest, LookupResponse } from '@/utils/types';
+import { createPopover, supportsPopover } from '@/utils/popover';
+import type { AlkoProduct, FoundResult, LookupRequest, LookupResult, Message } from '@/utils/types';
 
 export default defineContentScript({
   matches: ['*://www.alko.fi/*', '*://alko.fi/*'],
@@ -33,6 +34,30 @@ export default defineContentScript({
       return pending;
     }
 
+    /** Sends a message to the background worker and unwraps its `{ ok, result | error }` reply. */
+    async function ask<T>(message: Message): Promise<T> {
+      const res = (await browser.runtime.sendMessage(message)) as
+        | { ok: true; result: T }
+        | { ok: false; error: string }
+        | undefined;
+      if (!res) throw new Error('No response from background');
+      if (!res.ok) throw new Error(res.error);
+      return res.result;
+    }
+
+    // Clicking a rating badge shows the wine's Vivino details. Without the
+    // native popover API (older browsers) the badge simply links to Vivino.
+    const popover = supportsPopover()
+      ? createPopover({
+          loadImage: (url) => ask<string>({ type: 'vivalko:image', url }),
+          loadGrapes: (ids) => ask<string[]>({ type: 'vivalko:grapes', ids }),
+        })
+      : undefined;
+    ctx.onInvalidated(() => popover?.host.remove());
+    const openDetails = popover
+      ? (anchor: HTMLAnchorElement, result: FoundResult) => popover.open(anchor, result, pageLanguage())
+      : undefined;
+
     async function fill(render: ReturnType<typeof createBadge>['render'], product: AlkoProduct) {
       try {
         const cached = await getCached(product.id);
@@ -41,9 +66,7 @@ export default defineContentScript({
           return;
         }
         const req: LookupRequest = { type: 'vivalko:lookup', product: await enrich(product) };
-        const res = (await browser.runtime.sendMessage(req)) as LookupResponse | undefined;
-        if (!res) throw new Error('No response from background');
-        render(res.ok ? { kind: 'result', result: res.result } : { kind: 'error', message: res.error });
+        render({ kind: 'result', result: await ask<LookupResult>(req) });
       } catch (err) {
         if (ctx.isValid) render({ kind: 'error', message: String(err) });
       }
@@ -69,7 +92,7 @@ export default defineContentScript({
         const nameBlock = heading?.parentElement;
         if (!nameBlock?.parentElement) continue;
 
-        const badge = createBadge('small');
+        const badge = createBadge('small', pageLanguage(), openDetails);
         // The info column is a flex column ordered with `order`; sit between name and price.
         badge.host.style.order = '2';
         nameBlock.after(badge.host);
@@ -89,7 +112,7 @@ export default defineContentScript({
         h1.parentElement?.querySelector(':scope > [data-vivalko="badge"]')?.remove();
         if (!isWineCategory(product.category)) continue;
 
-        const badge = createBadge('large');
+        const badge = createBadge('large', pageLanguage(), openDetails);
         badge.host.style.order = getComputedStyle(h1).order;
         badge.host.style.padding = '0 1rem';
         badge.host.style.marginBottom = '1rem';
