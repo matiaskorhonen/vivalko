@@ -49,12 +49,16 @@ ${STARS_CSS}
   background: #8c1c34; color: #fff; text-decoration: none; font-weight: 600;
 }
 .cta:hover { background: #a3223f; }
+.actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; margin-top: 16px; }
+.actions .cta { margin-top: 0; }
+.search { color: #6b6b68; font-size: 13px; text-decoration: underline; text-underline-offset: 2px; }
+.search:hover { color: #8c1c34; }
 .close {
   position: absolute; top: 8px; right: 8px; width: 32px; height: 32px; border: 0; border-radius: 50%;
   background: transparent; color: #6b6b68; font-size: 22px; line-height: 1; cursor: pointer;
 }
 .close:hover { background: #ece4dd; color: #1d1d1b; }
-.cta:focus-visible, .close:focus-visible { outline: 2px solid #8c1c34; outline-offset: 2px; }
+.cta:focus-visible, .search:focus-visible, .close:focus-visible { outline: 2px solid #8c1c34; outline-offset: 2px; }
 `;
 
 export function supportsPopover(): boolean {
@@ -209,6 +213,14 @@ export function createPopover(deps: PopoverDeps) {
     cta.target = '_blank';
     cta.rel = 'noopener noreferrer';
 
+    let search: HTMLAnchorElement | null = null;
+    if (result.searchUrl) {
+      search = el('a', { className: 'search', text: `${t.wrongWine} ↗` });
+      search.href = result.searchUrl;
+      search.target = '_blank';
+      search.rel = 'noopener noreferrer';
+    }
+
     const closeButton = el('button', { className: 'close', text: '×' });
     closeButton.type = 'button';
     closeButton.setAttribute('aria-label', t.close);
@@ -225,7 +237,7 @@ export function createPopover(deps: PopoverDeps) {
         facts,
         rating,
         grapes,
-        cta,
+        el('div', { className: 'actions' }, cta, search),
       ),
     );
   }

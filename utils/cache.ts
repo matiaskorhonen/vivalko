@@ -16,8 +16,8 @@ export const enabledSetting = storage.defineItem<boolean>('local:enabled', { fal
 export async function getCached(alkoId: string, now = Date.now()): Promise<LookupResult | undefined> {
   const entry = await storage.getItem<CacheEntry>(`local:${PREFIX}${alkoId}`);
   if (!entry) return undefined;
-  // Matches cached before the popover existed lack its details; look them up again.
-  if (entry.result.status === 'found' && !entry.result.details) return undefined;
+  // Matches cached before the popover (or its search link) existed lack those; look them up again.
+  if (entry.result.status === 'found' && (!entry.result.details || !entry.result.searchUrl)) return undefined;
   const ttl = entry.result.status === 'found' ? FOUND_TTL : NOT_FOUND_TTL;
   return now - entry.storedAt < ttl ? entry.result : undefined;
 }

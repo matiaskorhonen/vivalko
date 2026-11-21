@@ -8,7 +8,7 @@ import {
   toSearchQuery,
   wineType,
 } from './normalize';
-import type { AlkoProduct, LookupResult, WineDetails } from './types';
+import type { AlkoProduct, FoundResult, LookupResult, WineDetails } from './types';
 
 /**
  * Vivino's own wine search is backed by Algolia. These are the public,
@@ -233,9 +233,18 @@ export function vivinoWineUrl(wineId: number, year?: number): string {
   return url.toString();
 }
 
+/**
+ * Explore's filter state, zlib-compressed and base64url-encoded: just "nb=true",
+ * which includes wines that aren't for sale. Vivino's plain search
+ * (/search/wines?q=) only lists wines you can buy there, and hides sold-out ones.
+ */
+const EXPLORE_ALL_WINES = 'eJzLS7ItKSpNBQAK-wLO';
+
+/** Vivino's wine search, including wines that aren't for sale. */
 export function vivinoSearchUrl(query: string): string {
-  const url = new URL('https://www.vivino.com/search/wines');
-  url.searchParams.set('q', query);
+  const url = new URL('https://www.vivino.com/explore');
+  url.searchParams.set('e', EXPLORE_ALL_WINES);
+  url.searchParams.set('search_term', query);
   return url.toString();
 }
 
@@ -260,7 +269,7 @@ export function toDetails(hit: VivinoHit): WineDetails {
   };
 }
 
-export function toResult(hit: VivinoHit, year: number | undefined): LookupResult {
+export function toResult(hit: VivinoHit, year: number | undefined): FoundResult {
   const wineName = [hit.winery?.name, hit.name].filter(Boolean).join(' ');
   const vintage = year ? hit.vintages?.find((v) => v.year === String(year)) : undefined;
   const details = toDetails(hit);
@@ -312,7 +321,7 @@ export async function lookupProduct(
   }
 
   if (!match) return { status: 'not-found', searchUrl: vivinoSearchUrl(query) };
-  return toResult(match.hit, extractVintage(product.name));
+  return { ...toResult(match.hit, extractVintage(product.name)), searchUrl: vivinoSearchUrl(query) };
 }
 
 /** The search query with the producer added, or undefined if it adds nothing new. */

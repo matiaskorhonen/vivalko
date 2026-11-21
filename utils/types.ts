@@ -41,6 +41,8 @@ export type FoundResult = {
   scope: 'vintage' | 'wine';
   year?: number;
   details?: WineDetails;
+  /** Vivino search for the Alko name, for when the match is the wrong wine. */
+  searchUrl?: string;
 };
 
 export type LookupResult = FoundResult | { status: 'not-found'; searchUrl: string };

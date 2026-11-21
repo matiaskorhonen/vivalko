@@ -5,7 +5,7 @@ import type { LookupResult } from '../utils/types';
 
 const found: LookupResult = {
   status: 'found', wineId: 1, wineName: 'X', url: 'https://www.vivino.com/w/1',
-  rating: 4, ratingsCount: 10, scope: 'wine', details: { wine: 'X' },
+  rating: 4, ratingsCount: 10, scope: 'wine', details: { wine: 'X' }, searchUrl: 'https://www.vivino.com/search/wines?q=x',
 };
 const notFound: LookupResult = { status: 'not-found', searchUrl: 'https://www.vivino.com/search/wines?q=x' };
 const DAY = 24 * 60 * 60 * 1000;
@@ -24,6 +24,12 @@ describe('cache', () => {
 
   it('treats matches cached without popover details as stale', async () => {
     const { details: _, ...old } = found as Extract<LookupResult, { status: 'found' }>;
+    await setCached('a', old, 0);
+    expect(await getCached('a', DAY)).toBeUndefined();
+  });
+
+  it('treats matches cached without a search link as stale', async () => {
+    const { searchUrl: _, ...old } = found as Extract<LookupResult, { status: 'found' }>;
     await setCached('a', old, 0);
     expect(await getCached('a', DAY)).toBeUndefined();
   });

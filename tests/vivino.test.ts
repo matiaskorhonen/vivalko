@@ -133,12 +133,16 @@ describe('lookupProduct', () => {
       fakeFetch,
     );
     expect(body.query).toBe('michele chiarlo cipressi nizza');
-    expect(result).toMatchObject({ status: 'found', wineId: (chiarlo as VivinoHit[])[0]!.id });
+    expect(result).toMatchObject({
+      status: 'found',
+      wineId: (chiarlo as VivinoHit[])[0]!.id,
+      searchUrl: 'https://www.vivino.com/explore?e=eJzLS7ItKSpNBQAK-wLO&search_term=michele+chiarlo+cipressi+nizza',
+    });
   });
 
   it('returns a search link when nothing matches', async () => {
     const fakeFetch = (async () => new Response(JSON.stringify({ hits: [] }))) as unknown as typeof fetch;
     const result = await lookupProduct({ id: '1', name: 'Nothing Here 2020' }, fakeFetch);
-    expect(result).toEqual({ status: 'not-found', searchUrl: 'https://www.vivino.com/search/wines?q=nothing+here' });
+    expect(result).toEqual({ status: 'not-found', searchUrl: 'https://www.vivino.com/explore?e=eJzLS7ItKSpNBQAK-wLO&search_term=nothing+here' });
   });
 });
