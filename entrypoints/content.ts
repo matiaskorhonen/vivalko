@@ -1,6 +1,6 @@
 import { readCard, readProductPage } from '@/utils/alko';
 import { fetchAlkoDetails } from '@/utils/alko-api';
-import { createBadge } from '@/utils/badge';
+import { createBadge, pageLanguage } from '@/utils/badge';
 import { enabledSetting, getCached } from '@/utils/cache';
 import { createLimiter } from '@/utils/limit';
 import { isWineCategory } from '@/utils/normalize';
@@ -23,7 +23,9 @@ export default defineContentScript({
       let pending = details.get(product.id);
       if (!pending) {
         pending = alkoLimit(() => fetchAlkoDetails(product.id))
-          .then((d) => ({ ...product, producer: d?.producer, country: product.country ?? d?.country }))
+          // The catalog is always queried in Finnish, so its country name maps reliably
+          // even when the page is in Swedish or English.
+          .then((d) => ({ ...product, producer: d?.producer, country: d?.country ?? product.country }))
           // Matching still works on the name alone, just less precisely.
           .catch(() => product);
         details.set(product.id, pending);
@@ -47,10 +49,18 @@ export default defineContentScript({
       }
     }
 
+    /**
+     * Marks what an element was decorated for. Badges are written in the page language,
+     * so switching Alko's language without a reload must redraw them.
+     */
+    function marker(id: string): string {
+      return `${pageLanguage()}:${id}`;
+    }
+
     function decorateCards() {
       for (const card of document.querySelectorAll<HTMLElement>('article[id^="product-"]')) {
-        if (card.dataset.vivalko === card.id) continue;
-        card.dataset.vivalko = card.id;
+        if (card.dataset.vivalko === marker(card.id)) continue;
+        card.dataset.vivalko = marker(card.id);
         card.querySelector('[data-vivalko="badge"]')?.remove();
 
         const product = readCard(card);
@@ -73,9 +83,9 @@ export default defineContentScript({
       const { product, headings } = page;
 
       for (const h1 of headings) {
-        if (h1.dataset.vivalko === product.id) continue;
+        if (h1.dataset.vivalko === marker(product.id)) continue;
         // Next.js may reuse the heading across client-side navigations.
-        h1.dataset.vivalko = product.id;
+        h1.dataset.vivalko = marker(product.id);
         h1.parentElement?.querySelector(':scope > [data-vivalko="badge"]')?.remove();
         if (!isWineCategory(product.category)) continue;
 

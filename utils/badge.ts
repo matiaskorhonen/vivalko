@@ -55,6 +55,15 @@ function formatCount(n: number, lang: string): string {
   return new Intl.NumberFormat(lang, { notation: n >= 10000 ? 'compact' : 'standard' }).format(n);
 }
 
+/**
+ * The language Alko is showing: the first segment of the path (/fi/, /sv/, /en/).
+ * `<html lang>` is not reliable, because it keeps its old value when the
+ * language is switched without a page reload.
+ */
+export function pageLanguage(path: string = location.pathname): string {
+  return path.match(/^\/(fi|sv|en)(?:\/|$)/)?.[1] ?? (document.documentElement.lang || 'fi');
+}
+
 /** Labels in the Alko page language (fi is the default, sv and en are also served). */
 function labels(lang: string) {
   if (lang.startsWith('sv')) {
@@ -66,7 +75,7 @@ function labels(lang: string) {
   return { ratings: 'arviota', allVintages: 'kaikki vuosikerrat', notFound: 'ei löytynyt', tooFew: 'liian vähän arvioita', error: 'ei saatavilla', loading: 'haetaan' };
 }
 
-export function createBadge(size: 'small' | 'large' = 'small'): {
+export function createBadge(size: 'small' | 'large' = 'small', lang: string = pageLanguage()): {
   host: HTMLElement;
   render: (state: BadgeState) => void;
 } {
@@ -75,7 +84,6 @@ export function createBadge(size: 'small' | 'large' = 'small'): {
   host.dataset.size = size;
   const root = host.attachShadow({ mode: 'open' });
   const style = el('style', { text: STYLE });
-  const lang = document.documentElement.lang || 'fi';
   const t = labels(lang);
 
   function render(state: BadgeState) {

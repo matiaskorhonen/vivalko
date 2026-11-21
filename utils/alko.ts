@@ -1,3 +1,4 @@
+import { normalize } from './normalize';
 import type { AlkoProduct } from './types';
 
 /** Direct text of an element, split at child elements (Alko separates fields with empty spans). */
@@ -69,7 +70,8 @@ export function readProductPage(
   let country: string | undefined;
   for (const a of doc.querySelectorAll<HTMLAnchorElement>('nav a[href]')) {
     const m = a.getAttribute('href')?.match(CATEGORY_COUNTRY_RE);
-    if (m && ld.category && m[1] === ld.category.toLowerCase()) country = a.textContent?.trim();
+    // Compare loosely: the URL says "rodvin" or "red-wine" where the data says "rödvin" or "Red wine".
+    if (m && ld.category && normalize(m[1]!) === normalize(ld.category)) country = a.textContent?.trim();
   }
 
   return { product: { id, name, category: ld.category, country }, headings };

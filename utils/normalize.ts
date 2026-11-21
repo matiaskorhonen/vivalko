@@ -129,10 +129,19 @@ const COUNTRY_CODES: Record<string, string> = {
   frankrike: 'fr', spanien: 'es', tyskland: 'de', osterrike: 'at', ungern: 'hu',
   grekland: 'gr', usa: 'us', argentina: 'ar', 'nya zeeland': 'nz', sydafrika: 'za',
   schweiz: 'ch', england: 'gb', storbritannien: 'gb', finland: 'fi',
+  italien: 'it', australien: 'au', slovenien: 'si', kroatien: 'hr', georgien: 'ge',
+  rumanien: 'ro', bulgarien: 'bg', moldavien: 'md', brasilien: 'br', kina: 'cn',
+  turkiet: 'tr', slovakien: 'sk', tjeckien: 'cz', serbien: 'rs', nordmakedonien: 'mk',
+  armenien: 'am', cypern: 'cy', belgien: 'be',
   // English
   italy: 'it', france: 'fr', spain: 'es', portugal: 'pt', germany: 'de', austria: 'at',
   hungary: 'hu', greece: 'gr', 'united states': 'us', 'new zealand': 'nz',
   'south africa': 'za', canada: 'ca', switzerland: 'ch', 'united kingdom': 'gb',
+  lebanon: 'lb', croatia: 'hr', brazil: 'br', china: 'cn', japan: 'jp', turkey: 'tr',
+  'czech republic': 'cz', czechia: 'cz', 'north macedonia': 'mk', luxembourg: 'lu',
+  mexico: 'mx', cyprus: 'cy', belgium: 'be',
+  // Finnish, missing above
+  belgia: 'be',
 };
 
 export function countryCode(country: string | undefined): string | undefined {

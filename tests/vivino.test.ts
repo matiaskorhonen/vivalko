@@ -41,6 +41,8 @@ describe('normalize', () => {
     expect(countryCode('Portugali')).toBe('pt');
     expect(countryCode('Etelä-Afrikka')).toBe('za');
     expect(countryCode('Nya Zeeland')).toBe('nz');
+    expect(countryCode('Italien')).toBe('it');
+    expect(countryCode('Lebanon')).toBe('lb');
     expect(countryCode('Atlantis')).toBeUndefined();
   });
 

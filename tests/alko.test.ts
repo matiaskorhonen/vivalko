@@ -60,6 +60,18 @@ describe('readProductPage', () => {
     expect(readProductPage(document, '/fi/tuotteet/913415/chateau-malmaison-2017')).toBeUndefined();
   });
 
+  it('reads the country on Swedish and English pages', () => {
+    // On /sv/ the breadcrumb URL says "rodvin" while the structured data says "rödvin".
+    document.body.innerHTML = PRODUCT_PAGE.replaceAll('/fi/tuotteet/punaviinit/ranska">Ranska', '/sv/produkter/rodvin/frankrike">Frankrike')
+      .replace('"category":"punaviinit"', '"category":"rödvin"');
+    expect(readProductPage(document, '/sv/produkter/913415/chateau-malmaison-2017')?.product).toMatchObject({
+      category: 'rödvin', country: 'Frankrike',
+    });
+    document.body.innerHTML = PRODUCT_PAGE.replaceAll('/fi/tuotteet/punaviinit/ranska">Ranska', '/en/products/red-wine/france">France')
+      .replace('"category":"punaviinit"', '"category":"Red wine"');
+    expect(readProductPage(document, '/en/products/913415/chateau-malmaison-2017')?.product.country).toBe('France');
+  });
+
   it('ignores pages that are not product pages', () => {
     expect(readProductPage(document, '/fi/tuotteet/punaviinit')).toBeUndefined();
   });
