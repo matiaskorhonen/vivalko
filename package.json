@@ -1,8 +1,8 @@
 {
-  "name": "wxt-starter",
+  "name": "vivalko",
   "version": "0.0.0",
   "private": true,
-  "description": "manifest.json description",
+  "description": "Shows Vivino ratings for wines on Alko.fi",
   "type": "module",
   "scripts": {
     "dev": "wxt",
@@ -12,11 +12,13 @@
     "zip": "wxt zip",
     "zip:firefox": "wxt zip -b firefox",
     "compile": "tsc --noEmit",
-    "postinstall": "wxt prepare"
+    "postinstall": "wxt prepare",
+    "test": "vitest run"
   },
   "devDependencies": {
     "typescript": "^5.9.3",
     "vite": "^8.1.5",
+    "vitest": "^5.1.1",
     "web-ext": "^10.5.0",
     "wxt": "^0.21.3"
   }

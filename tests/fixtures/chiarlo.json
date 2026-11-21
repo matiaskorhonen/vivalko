@@ -1,0 +1,101 @@
+[
+ {
+  "id": 5014885,
+  "name": "Cipressi Nizza",
+  "seo_name": "cipressi-nizza-nizza",
+  "region": {
+   "country": "it"
+  },
+  "vintages": [
+   {
+    "id": 148213444,
+    "seo_name": "michele-chiarlo-cipressi-nizza-nizza-uv",
+    "year": "U.V.",
+    "name": "Michele Chiarlo Cipressi Nizza",
+    "statistics": {
+     "status": "Normal",
+     "ratings_count": 8400,
+     "ratings_average": 3.9,
+     "labels_count": 41,
+     "reviews_count": 147
+    }
+   },
+   {
+    "id": 183076665,
+    "seo_name": "michele-chiarlo-cipressi-nizza-nizza-2025",
+    "year": "2025",
+    "name": "Michele Chiarlo Cipressi Nizza 2025",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 0,
+     "ratings_average": 0,
+     "labels_count": 2,
+     "reviews_count": 0
+    }
+   },
+   {
+    "id": 179656819,
+    "seo_name": "michele-chiarlo-cipressi-nizza-nizza-2024",
+    "year": "2024",
+    "name": "Michele Chiarlo Cipressi Nizza 2024",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 1,
+     "ratings_average": 0,
+     "labels_count": 5,
+     "reviews_count": 0
+    }
+   },
+   {
+    "id": 177998795,
+    "seo_name": "michele-chiarlo-cipressi-nizza-nizza-2023",
+    "year": "2023",
+    "name": "Michele Chiarlo Cipressi Nizza 2023",
+    "statistics": {
+     "status": "Normal",
+     "ratings_count": 131,
+     "ratings_average": 4,
+     "labels_count": 1066,
+     "reviews_count": 35
+    }
+   },
+   {
+    "id": 174450739,
+    "seo_name": "michele-chiarlo-cipressi-nizza-nizza-2022",
+    "year": "2022",
+    "name": "Michele Chiarlo Cipressi Nizza 2022",
+    "statistics": {
+     "status": "Normal",
+     "ratings_count": 612,
+     "ratings_average": 4,
+     "labels_count": 5069,
+     "reviews_count": 175
+    }
+   },
+   {
+    "id": 153313873,
+    "seo_name": "michele-chiarlo-cipressi-nizza-nizza-2017",
+    "year": "2017",
+    "name": "Michele Chiarlo Cipressi Nizza 2017",
+    "statistics": {
+     "status": "Normal",
+     "ratings_count": 1174,
+     "ratings_average": 3.9,
+     "labels_count": 9270,
+     "reviews_count": 399
+    }
+   }
+  ],
+  "winery": {
+   "name": "Michele Chiarlo",
+   "seo_name": "michele-chiarlo"
+  },
+  "statistics": {
+   "status": "Normal",
+   "ratings_count": 8400,
+   "labels_count": 59644,
+   "unified_average_ratings": 0,
+   "ratings_average": 3.9
+  }
+ }
+]

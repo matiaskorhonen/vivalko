@@ -1,0 +1,101 @@
+[
+ {
+  "id": 97224,
+  "name": "Moulis-en-Médoc",
+  "seo_name": "moulis-en-medoc",
+  "region": {
+   "country": "fr"
+  },
+  "vintages": [
+   {
+    "id": 2136592,
+    "seo_name": "malmaison-moulis-en-medoc-uv",
+    "year": "U.V.",
+    "name": "Château Malmaison Moulis-en-Médoc",
+    "statistics": {
+     "status": "Normal",
+     "ratings_count": 4325,
+     "ratings_average": 3.8,
+     "labels_count": 361,
+     "reviews_count": 32
+    }
+   },
+   {
+    "id": 183244322,
+    "seo_name": "malmaison-moulis-en-medoc-2025",
+    "year": "2025",
+    "name": "Château Malmaison Moulis-en-Médoc 2025",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 0,
+     "ratings_average": 0,
+     "labels_count": 0,
+     "reviews_count": 0
+    }
+   },
+   {
+    "id": 179933453,
+    "seo_name": "malmaison-moulis-en-medoc-2024",
+    "year": "2024",
+    "name": "Château Malmaison Moulis-en-Médoc 2024",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 0,
+     "ratings_average": 0,
+     "labels_count": 0,
+     "reviews_count": 0
+    }
+   },
+   {
+    "id": 174135952,
+    "seo_name": "malmaison-moulis-en-medoc-2023",
+    "year": "2023",
+    "name": "Château Malmaison Moulis-en-Médoc 2023",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 0,
+     "ratings_average": 0,
+     "labels_count": 1,
+     "reviews_count": 0
+    }
+   },
+   {
+    "id": 171360999,
+    "seo_name": "malmaison-moulis-en-medoc-2022",
+    "year": "2022",
+    "name": "Château Malmaison Moulis-en-Médoc 2022",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 14,
+     "ratings_average": 0,
+     "labels_count": 406,
+     "reviews_count": 3
+    }
+   },
+   {
+    "id": 150626794,
+    "seo_name": "malmaison-moulis-en-medoc-2017",
+    "year": "2017",
+    "name": "Château Malmaison Moulis-en-Médoc 2017",
+    "statistics": {
+     "status": "Normal",
+     "ratings_count": 47,
+     "ratings_average": 4,
+     "labels_count": 1112,
+     "reviews_count": 11
+    }
+   }
+  ],
+  "winery": {
+   "name": "Château Malmaison",
+   "seo_name": "malmaison"
+  },
+  "statistics": {
+   "status": "Normal",
+   "ratings_count": 4325,
+   "labels_count": 69366,
+   "unified_average_ratings": 0,
+   "ratings_average": 3.8
+  }
+ }
+]

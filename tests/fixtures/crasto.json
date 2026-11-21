@@ -1,0 +1,479 @@
+[
+ {
+  "id": 1291873,
+  "name": "Reserva Vinhas Velhas",
+  "seo_name": "reserva-vinhas-velhas",
+  "region": {
+   "country": "pt"
+  },
+  "vintages": [
+   {
+    "id": 1658928,
+    "seo_name": "quinta-do-crasto-reserva-vinhas-velhas-uv",
+    "year": "U.V.",
+    "name": "Quinta do Crasto Reserva Vinhas Velhas",
+    "statistics": {
+     "status": "Normal",
+     "ratings_count": 42096,
+     "ratings_average": 4.3,
+     "labels_count": 460,
+     "reviews_count": 313
+    }
+   },
+   {
+    "id": 182422716,
+    "seo_name": "quinta-do-crasto-reserva-vinhas-velhas-2025",
+    "year": "2025",
+    "name": "Quinta do Crasto Reserva Vinhas Velhas 2025",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 0,
+     "ratings_average": 0,
+     "labels_count": 0,
+     "reviews_count": 0
+    }
+   },
+   {
+    "id": 179681722,
+    "seo_name": "quinta-do-crasto-reserva-vinhas-velhas-2024",
+    "year": "2024",
+    "name": "Quinta do Crasto Reserva Vinhas Velhas 2024",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 3,
+     "ratings_average": 0,
+     "labels_count": 21,
+     "reviews_count": 3
+    }
+   },
+   {
+    "id": 174326792,
+    "seo_name": "quinta-do-crasto-reserva-vinhas-velhas-2023",
+    "year": "2023",
+    "name": "Quinta do Crasto Reserva Vinhas Velhas 2023",
+    "statistics": {
+     "status": "Normal",
+     "ratings_count": 397,
+     "ratings_average": 4.3,
+     "labels_count": 3143,
+     "reviews_count": 105
+    }
+   },
+   {
+    "id": 170691383,
+    "seo_name": "quinta-do-crasto-reserva-vinhas-velhas-2022",
+    "year": "2022",
+    "name": "Quinta do Crasto Reserva Vinhas Velhas 2022",
+    "statistics": {
+     "status": "Normal",
+     "ratings_count": 928,
+     "ratings_average": 4.3,
+     "labels_count": 8917,
+     "reviews_count": 224
+    }
+   },
+   {
+    "id": 150272216,
+    "seo_name": "quinta-do-crasto-reserva-vinhas-velhas-2017",
+    "year": "2017",
+    "name": "Quinta do Crasto Reserva Vinhas Velhas 2017",
+    "statistics": {
+     "status": "Normal",
+     "ratings_count": 3091,
+     "ratings_average": 4.4,
+     "labels_count": 23604,
+     "reviews_count": 909
+    }
+   }
+  ],
+  "winery": {
+   "name": "Quinta do Crasto",
+   "seo_name": "quinta-do-crasto"
+  },
+  "statistics": {
+   "status": "Normal",
+   "ratings_count": 42096,
+   "labels_count": 258388,
+   "unified_average_ratings": 0,
+   "ratings_average": 4.3
+  }
+ },
+ {
+  "id": 1240696,
+  "name": "Etiqueta Negra Reserva",
+  "seo_name": "etiqueta-negra-reserva",
+  "region": {
+   "country": "pt"
+  },
+  "vintages": [
+   {
+    "id": 1723829,
+    "seo_name": "quinta-do-crasto-etiqueta-negra-reserva-uv",
+    "year": "U.V.",
+    "name": "Quinta do Crasto Etiqueta Negra Reserva",
+    "statistics": {
+     "status": "Normal",
+     "ratings_count": 3169,
+     "ratings_average": 3.7,
+     "labels_count": 220,
+     "reviews_count": 21
+    }
+   },
+   {
+    "id": 183454108,
+    "seo_name": "quinta-do-crasto-etiqueta-negra-reserva-2023",
+    "year": "2023",
+    "name": "Quinta do Crasto Etiqueta Negra Reserva 2023",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 0,
+     "ratings_average": 0,
+     "labels_count": 0,
+     "reviews_count": 0
+    }
+   },
+   {
+    "id": 172026014,
+    "seo_name": "quinta-do-crasto-etiqueta-negra-reserva-2022",
+    "year": "2022",
+    "name": "Quinta do Crasto Etiqueta Negra Reserva 2022",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 0,
+     "ratings_average": 0,
+     "labels_count": 1,
+     "reviews_count": 0
+    }
+   },
+   {
+    "id": 150495291,
+    "seo_name": "quinta-do-crasto-etiqueta-negra-reserva-2017",
+    "year": "2017",
+    "name": "Quinta do Crasto Etiqueta Negra Reserva 2017",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 2,
+     "ratings_average": 0,
+     "labels_count": 9,
+     "reviews_count": 0
+    }
+   }
+  ],
+  "winery": {
+   "name": "Quinta do Crasto",
+   "seo_name": "quinta-do-crasto"
+  },
+  "statistics": {
+   "status": "Normal",
+   "ratings_count": 3169,
+   "labels_count": 12601,
+   "unified_average_ratings": 0,
+   "ratings_average": 3.7
+  }
+ },
+ {
+  "id": 1247050,
+  "name": "Old Vines Tinto",
+  "seo_name": "old-vines-tinto",
+  "region": {
+   "country": "pt"
+  },
+  "vintages": [
+   {
+    "id": 2303761,
+    "seo_name": "javali-old-vines-tinto-uv",
+    "year": "U.V.",
+    "name": "Quinta do Javali Old Vines Tinto",
+    "statistics": {
+     "status": "Normal",
+     "ratings_count": 1218,
+     "ratings_average": 4.4,
+     "labels_count": 17,
+     "reviews_count": 14
+    }
+   },
+   {
+    "id": 184016539,
+    "seo_name": "javali-old-vines-tinto-2025",
+    "year": "2025",
+    "name": "Quinta do Javali Old Vines Tinto 2025",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 0,
+     "ratings_average": 0,
+     "labels_count": 0,
+     "reviews_count": 0
+    }
+   },
+   {
+    "id": 182938987,
+    "seo_name": "javali-old-vines-tinto-2024",
+    "year": "2024",
+    "name": "Quinta do Javali Old Vines Tinto 2024",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 0,
+     "ratings_average": 0,
+     "labels_count": 1,
+     "reviews_count": 0
+    }
+   },
+   {
+    "id": 178295730,
+    "seo_name": "javali-old-vines-tinto-2023",
+    "year": "2023",
+    "name": "Quinta do Javali Old Vines Tinto 2023",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 3,
+     "ratings_average": 0,
+     "labels_count": 56,
+     "reviews_count": 1
+    }
+   },
+   {
+    "id": 173805474,
+    "seo_name": "javali-old-vines-tinto-2022",
+    "year": "2022",
+    "name": "Quinta do Javali Old Vines Tinto 2022",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 0,
+     "ratings_average": 0,
+     "labels_count": 4,
+     "reviews_count": 0
+    }
+   },
+   {
+    "id": 152417297,
+    "seo_name": "javali-old-vines-tinto-2017",
+    "year": "2017",
+    "name": "Quinta do Javali Old Vines Tinto 2017",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 1,
+     "ratings_average": 0,
+     "labels_count": 7,
+     "reviews_count": 1
+    }
+   }
+  ],
+  "winery": {
+   "name": "Quinta do Javali",
+   "seo_name": "javali"
+  },
+  "statistics": {
+   "status": "Normal",
+   "ratings_count": 1218,
+   "labels_count": 8409,
+   "unified_average_ratings": 0,
+   "ratings_average": 4.4
+  }
+ },
+ {
+  "id": 5962303,
+  "name": "Dorna Velha Old Vines",
+  "seo_name": "dorna-velha-old-vines",
+  "region": {
+   "country": "pt"
+  },
+  "vintages": [
+   {
+    "id": 155599140,
+    "seo_name": "silval-dorna-velha-old-vines-uv",
+    "year": "U.V.",
+    "name": "Quinta do Silval Dorna Velha Old Vines",
+    "statistics": {
+     "status": "Normal",
+     "ratings_count": 317,
+     "ratings_average": 4.2,
+     "labels_count": 1,
+     "reviews_count": 4
+    }
+   },
+   {
+    "id": 180762055,
+    "seo_name": "silval-dorna-velha-old-vines-2022",
+    "year": "2022",
+    "name": "Quinta do Silval Dorna Velha Old Vines 2022",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 3,
+     "ratings_average": 0,
+     "labels_count": 18,
+     "reviews_count": 1
+    }
+   },
+   {
+    "id": 160104998,
+    "seo_name": "silval-dorna-velha-old-vines-2017",
+    "year": "2017",
+    "name": "Quinta do Silval Dorna Velha Old Vines 2017",
+    "statistics": {
+     "status": "Normal",
+     "ratings_count": 143,
+     "ratings_average": 4.2,
+     "labels_count": 1128,
+     "reviews_count": 41
+    }
+   }
+  ],
+  "winery": {
+   "name": "Quinta do Silval",
+   "seo_name": "silval"
+  },
+  "statistics": {
+   "status": "Normal",
+   "ratings_count": 317,
+   "labels_count": 2794,
+   "unified_average_ratings": 0,
+   "ratings_average": 4.2
+  }
+ },
+ {
+  "id": 8447430,
+  "name": "Vinhas Velhas Old Vines",
+  "seo_name": "vinhas-velhas-old-vines",
+  "region": {
+   "country": "pt"
+  },
+  "vintages": [
+   {
+    "id": 164635864,
+    "seo_name": "cume-vinhas-velhas-old-vines-uv",
+    "year": "U.V.",
+    "name": "Quinta do Cume Vinhas Velhas Old Vines",
+    "statistics": {
+     "status": "Normal",
+     "ratings_count": 113,
+     "ratings_average": 4.3,
+     "labels_count": 1,
+     "reviews_count": 4
+    }
+   },
+   {
+    "id": 183194245,
+    "seo_name": "cume-vinhas-velhas-old-vines-2025",
+    "year": "2025",
+    "name": "Quinta do Cume Vinhas Velhas Old Vines 2025",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 0,
+     "ratings_average": 0,
+     "labels_count": 1,
+     "reviews_count": 0
+    }
+   },
+   {
+    "id": 173126479,
+    "seo_name": "cume-vinhas-velhas-old-vines-2022",
+    "year": "2022",
+    "name": "Quinta do Cume Vinhas Velhas Old Vines 2022",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 1,
+     "ratings_average": 0,
+     "labels_count": 2,
+     "reviews_count": 0
+    }
+   },
+   {
+    "id": 165185592,
+    "seo_name": "cume-vinhas-velhas-old-vines-2017",
+    "year": "2017",
+    "name": "Quinta do Cume Vinhas Velhas Old Vines 2017",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 0,
+     "ratings_average": 0,
+     "labels_count": 1,
+     "reviews_count": 0
+    }
+   }
+  ],
+  "winery": {
+   "name": "Quinta do Cume",
+   "seo_name": "cume"
+  },
+  "statistics": {
+   "status": "Normal",
+   "ratings_count": 113,
+   "labels_count": 479,
+   "unified_average_ratings": 0,
+   "ratings_average": 4.3
+  }
+ },
+ {
+  "id": 6918143,
+  "name": "Reserva Tinto",
+  "seo_name": "reserva-tinto",
+  "region": {
+   "country": "pt"
+  },
+  "vintages": [
+   {
+    "id": 159139983,
+    "seo_name": "quinta-do-crasto-reserva-tinto-uv",
+    "year": "U.V.",
+    "name": "Quinta do Crasto Reserva Tinto",
+    "statistics": {
+     "status": "Normal",
+     "ratings_count": 131,
+     "ratings_average": 4.2,
+     "labels_count": 1,
+     "reviews_count": 8
+    }
+   },
+   {
+    "id": 178987048,
+    "seo_name": "quinta-do-crasto-reserva-tinto-2023",
+    "year": "2023",
+    "name": "Quinta do Crasto Reserva Tinto 2023",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 1,
+     "ratings_average": 0,
+     "labels_count": 0,
+     "reviews_count": 0
+    }
+   },
+   {
+    "id": 176790596,
+    "seo_name": "quinta-do-crasto-reserva-tinto-2022",
+    "year": "2022",
+    "name": "Quinta do Crasto Reserva Tinto 2022",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 6,
+     "ratings_average": 0,
+     "labels_count": 8,
+     "reviews_count": 4
+    }
+   },
+   {
+    "id": 159626123,
+    "seo_name": "quinta-do-crasto-reserva-tinto-2017",
+    "year": "2017",
+    "name": "Quinta do Crasto Reserva Tinto 2017",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 6,
+     "ratings_average": 0,
+     "labels_count": 3,
+     "reviews_count": 1
+    }
+   }
+  ],
+  "winery": {
+   "name": "Quinta do Crasto",
+   "seo_name": "quinta-do-crasto"
+  },
+  "statistics": {
+   "status": "Normal",
+   "ratings_count": 131,
+   "labels_count": 284,
+   "unified_average_ratings": 0,
+   "ratings_average": 4.2
+  }
+ }
+]

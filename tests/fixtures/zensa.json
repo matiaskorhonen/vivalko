@@ -1,0 +1,88 @@
+[
+ {
+  "id": 13927153,
+  "name": "Primitivo Organico",
+  "seo_name": "primitivo-organico",
+  "region": {
+   "country": "it"
+  },
+  "vintages": [
+   {
+    "id": 183324522,
+    "seo_name": "zensa-primitivo-organico-uv",
+    "year": "U.V.",
+    "name": "Zensa Primitivo Organico",
+    "statistics": {
+     "status": "Normal",
+     "ratings_count": 225,
+     "ratings_average": 4.1,
+     "labels_count": 3041,
+     "reviews_count": 60
+    }
+   },
+   {
+    "id": 183631547,
+    "seo_name": "zensa-primitivo-organico-2025",
+    "year": "2025",
+    "name": "Zensa Primitivo Organico 2025",
+    "statistics": {
+     "status": "Normal",
+     "ratings_count": 28,
+     "ratings_average": 4,
+     "labels_count": 18,
+     "reviews_count": 10
+    }
+   },
+   {
+    "id": 183789989,
+    "seo_name": "zensa-primitivo-organico-2024",
+    "year": "2024",
+    "name": "Zensa Primitivo Organico 2024",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 6,
+     "ratings_average": 0,
+     "labels_count": 6,
+     "reviews_count": 1
+    }
+   },
+   {
+    "id": 183741961,
+    "seo_name": "zensa-primitivo-organico-2023",
+    "year": "2023",
+    "name": "Zensa Primitivo Organico 2023",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 0,
+     "ratings_average": 0,
+     "labels_count": 0,
+     "reviews_count": 0
+    }
+   },
+   {
+    "id": 183655979,
+    "seo_name": "zensa-primitivo-organico-2022",
+    "year": "2022",
+    "name": "Zensa Primitivo Organico 2022",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 1,
+     "ratings_average": 0,
+     "labels_count": 5,
+     "reviews_count": 1
+    }
+   }
+  ],
+  "winery": {
+   "name": "Zensa",
+   "seo_name": "zensa"
+  },
+  "statistics": {
+   "status": "Normal",
+   "ratings_count": 225,
+   "labels_count": 3086,
+   "unified_average_ratings": 0,
+   "ratings_average": 4.1
+  }
+ }
+]
