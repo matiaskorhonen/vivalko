@@ -43,23 +43,25 @@ export default defineContentScript({
     }
 
     function decorateProductPage() {
-      const h1 = document.querySelector('h1');
-      if (!h1) return;
-      const product = readProductPage(document, location.pathname);
-      if (!product) return;
-      if (h1.dataset.vivalko === product.id) return;
+      const page = readProductPage(document, location.pathname);
+      if (!page) return;
+      const { product, headings } = page;
 
-      // Next.js may reuse the heading across client-side navigations.
-      h1.dataset.vivalko = product.id;
-      h1.parentElement?.querySelector(':scope > [data-vivalko="badge"]')?.remove();
-      if (!isWineCategory(product.category)) return;
+      for (const h1 of headings) {
+        if (h1.dataset.vivalko === product.id) continue;
+        // Next.js may reuse the heading across client-side navigations.
+        h1.dataset.vivalko = product.id;
+        h1.parentElement?.querySelector(':scope > [data-vivalko="badge"]')?.remove();
+        if (!isWineCategory(product.category)) continue;
 
-      const badge = createBadge('large');
-      badge.host.style.order = getComputedStyle(h1).order;
-      badge.host.style.padding = '0 1rem';
-      badge.host.style.marginBottom = '1rem';
-      h1.after(badge.host);
-      void fill(badge.render, product);
+        const badge = createBadge('large');
+        badge.host.style.order = getComputedStyle(h1).order;
+        badge.host.style.padding = '0 1rem';
+        badge.host.style.marginBottom = '1rem';
+        h1.after(badge.host);
+        // The background worker de-duplicates concurrent lookups for the same wine.
+        void fill(badge.render, product);
+      }
     }
 
     function scan() {

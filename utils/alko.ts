@@ -30,9 +30,20 @@ interface JsonLdProduct {
   category?: string;
 }
 
-/** Reads the product shown on a product page (`/<locale>/tuotteet/<id>/<slug>`). */
-export function readProductPage(doc: Document, path: string): AlkoProduct | undefined {
-  const id = path.match(/\/tuotteet\/(\d+)(?:\/|$)/)?.[1];
+/** Products live under a localized path: /fi/tuotteet, /sv/produkter, /en/products. */
+const PRODUCTS_PATH = '(?:tuotteet|produkter|products)';
+const PRODUCT_PAGE_RE = new RegExp(`/${PRODUCTS_PATH}/(\\d+)(?:/|$)`);
+const CATEGORY_COUNTRY_RE = new RegExp(`^/[a-z]{2}/${PRODUCTS_PATH}/([^/]+)/([^/]+)/?$`);
+
+/**
+ * Reads the product shown on a product page (`/fi/tuotteet/<id>/<slug>`).
+ * Returns the product together with the visible headings to decorate.
+ */
+export function readProductPage(
+  doc: Document,
+  path: string,
+): { product: AlkoProduct; headings: HTMLHeadingElement[] } | undefined {
+  const id = path.match(PRODUCT_PAGE_RE)?.[1];
   if (!id) return undefined;
 
   let ld: JsonLdProduct | undefined;
@@ -46,9 +57,20 @@ export function readProductPage(doc: Document, path: string): AlkoProduct | unde
   }
   // After client-side navigation the old page's data can linger, so require a matching SKU.
   if (!ld?.name) return undefined;
+  const name = ld.name.trim();
 
-  // The title is "<name> - <country> - <category> | Alko".
-  const titleParts = doc.title.replace(/\s*\|\s*Alko\s*$/, '').split(' - ');
-  const country = titleParts.length >= 3 ? titleParts[titleParts.length - 2] : undefined;
-  return { id, name: ld.name, category: ld.category, country };
+  // Alko renders the product header more than once for different layouts.
+  // Waiting until a heading shows this product also means the rest of the page
+  // (like the breadcrumb) has caught up after client-side navigation.
+  const headings = [...doc.querySelectorAll('h1')].filter((h) => h.textContent?.trim() === name);
+  if (headings.length === 0) return undefined;
+
+  // The breadcrumb ends in a "/<products>/<category>/<country>" link.
+  let country: string | undefined;
+  for (const a of doc.querySelectorAll<HTMLAnchorElement>('nav a[href]')) {
+    const m = a.getAttribute('href')?.match(CATEGORY_COUNTRY_RE);
+    if (m && ld.category && m[1] === ld.category.toLowerCase()) country = a.textContent?.trim();
+  }
+
+  return { product: { id, name, category: ld.category, country }, headings };
 }
