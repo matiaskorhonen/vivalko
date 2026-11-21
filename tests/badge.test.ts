@@ -1,6 +1,7 @@
 // @vitest-environment happy-dom
 import { afterEach, describe, expect, it } from 'vitest';
-import { createBadge, pageLanguage } from '../utils/badge';
+import { createBadge } from '../utils/badge';
+import { pageLanguage } from '../utils/i18n';
 import type { LookupResult } from '../utils/types';
 
 const found: LookupResult = {

@@ -2,8 +2,6 @@ import { el, stars, STARS_CSS } from './dom';
 import { formatCount, formatRating, labels, pageLanguage } from './i18n';
 import type { FoundResult, LookupResult } from './types';
 
-export { pageLanguage } from './i18n';
-
 export type BadgeState =
   | { kind: 'loading' }
   | { kind: 'result'; result: LookupResult }

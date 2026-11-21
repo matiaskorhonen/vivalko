@@ -1,6 +1,7 @@
 import { readCard, readProductPage } from '@/utils/alko';
 import { fetchAlkoDetails } from '@/utils/alko-api';
-import { createBadge, pageLanguage } from '@/utils/badge';
+import { createBadge } from '@/utils/badge';
+import { pageLanguage } from '@/utils/i18n';
 import { enabledSetting, getCached } from '@/utils/cache';
 import { createLimiter } from '@/utils/limit';
 import { isWineCategory } from '@/utils/normalize';
