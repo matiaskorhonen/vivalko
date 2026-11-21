@@ -1,25 +1,25 @@
 import './style.css';
-import wxtLogo from '/wxt.svg';
+import { cacheStats, clearCache, enabledSetting } from '@/utils/cache';
 
-import typescriptLogo from '@/assets/typescript.svg';
-import { setupCounter } from '@/components/counter';
+const enabled = document.querySelector<HTMLInputElement>('#enabled')!;
+const stats = document.querySelector<HTMLParagraphElement>('#stats')!;
+const clear = document.querySelector<HTMLButtonElement>('#clear')!;
+const reloadHint = document.querySelector<HTMLParagraphElement>('#reload-hint')!;
 
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-  <div>
-    <a href="https://wxt.dev" target="_blank">
-      <img src="${wxtLogo}" class="logo" alt="WXT logo" />
-    </a>
-    <a href="https://www.typescriptlang.org/" target="_blank">
-      <img src="${typescriptLogo}" class="logo vanilla" alt="TypeScript logo" />
-    </a>
-    <h1>WXT + TypeScript</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the WXT and TypeScript logos to learn more
-    </p>
-  </div>
-`;
+async function refreshStats() {
+  const { found, notFound } = await cacheStats();
+  stats.textContent = `${found} wines matched, ${notFound} not found (cached)`;
+}
 
-setupCounter(document.querySelector<HTMLButtonElement>('#counter')!);
+enabled.checked = await enabledSetting.getValue();
+enabled.addEventListener('change', async () => {
+  await enabledSetting.setValue(enabled.checked);
+  reloadHint.hidden = false;
+});
+
+clear.addEventListener('click', async () => {
+  await clearCache();
+  await refreshStats();
+});
+
+await refreshStats();
