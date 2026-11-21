@@ -1,0 +1,349 @@
+[
+ {
+  "id": 1587235,
+  "name": "Sangre de Toro Tempranillo",
+  "seo_name": "sangre-de-toro-tempranillo-la-mancha",
+  "region": {
+   "country": "es"
+  },
+  "vintages": [
+   {
+    "id": 2470973,
+    "seo_name": "familia-torres-sangre-de-toro-tempranillo-la-mancha-uv",
+    "year": "U.V.",
+    "name": "Familia Torres Sangre de Toro Tempranillo",
+    "statistics": {
+     "status": "Normal",
+     "ratings_count": 15706,
+     "ratings_average": 3.7,
+     "labels_count": 14218,
+     "reviews_count": 235
+    }
+   },
+   {
+    "id": 179681685,
+    "seo_name": "familia-torres-sangre-de-toro-tempranillo-la-mancha-2024",
+    "year": "2024",
+    "name": "Familia Torres Sangre de Toro Tempranillo 2024",
+    "statistics": {
+     "status": "Normal",
+     "ratings_count": 25,
+     "ratings_average": 3.6,
+     "labels_count": 493,
+     "reviews_count": 8
+    }
+   },
+   {
+    "id": 156133171,
+    "seo_name": "familia-torres-sangre-de-toro-tempranillo-la-mancha-2018",
+    "year": "2018",
+    "name": "Familia Torres Sangre de Toro Tempranillo 2018",
+    "statistics": {
+     "status": "Normal",
+     "ratings_count": 2946,
+     "ratings_average": 3.8,
+     "labels_count": 60027,
+     "reviews_count": 988
+    }
+   }
+  ],
+  "winery": {
+   "name": "Familia Torres",
+   "seo_name": "familia-torres"
+  },
+  "statistics": {
+   "status": "Normal",
+   "ratings_count": 15706,
+   "labels_count": 222102,
+   "unified_average_ratings": 0,
+   "ratings_average": 3.7
+  }
+ },
+ {
+  "id": 3842284,
+  "name": "Tempranillo",
+  "seo_name": "tempranillo",
+  "region": {
+   "country": "es"
+  },
+  "vintages": [
+   {
+    "id": 44474107,
+    "seo_name": "azul-y-garanza-tempranillo-uv",
+    "year": "U.V.",
+    "name": "Azul y Garanza Tempranillo",
+    "statistics": {
+     "status": "Normal",
+     "ratings_count": 1665,
+     "ratings_average": 3.7,
+     "labels_count": 44,
+     "reviews_count": 85
+    }
+   },
+   {
+    "id": 181975227,
+    "seo_name": "azul-y-garanza-tempranillo-2024",
+    "year": "2024",
+    "name": "Azul y Garanza Tempranillo 2024",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 0,
+     "ratings_average": 0,
+     "labels_count": 1,
+     "reviews_count": 0
+    }
+   },
+   {
+    "id": 160887937,
+    "seo_name": "azul-y-garanza-tempranillo-2018",
+    "year": "2018",
+    "name": "Azul y Garanza Tempranillo 2018",
+    "statistics": {
+     "status": "Normal",
+     "ratings_count": 217,
+     "ratings_average": 3.9,
+     "labels_count": 1169,
+     "reviews_count": 79
+    }
+   }
+  ],
+  "winery": {
+   "name": "Azul y Garanza",
+   "seo_name": "azul-y-garanza"
+  },
+  "statistics": {
+   "status": "Normal",
+   "ratings_count": 1665,
+   "labels_count": 9469,
+   "unified_average_ratings": 0,
+   "ratings_average": 3.7
+  }
+ },
+ {
+  "id": 4164572,
+  "name": "Primogénito Sangre Azul Merlot",
+  "seo_name": "primogenito-sangre-azul-merlot",
+  "region": {
+   "country": "ar"
+  },
+  "vintages": [
+   {
+    "id": 103170837,
+    "seo_name": "patritti-primogenito-sangre-azul-merlot-uv",
+    "year": "U.V.",
+    "name": "Patritti Primogénito Sangre Azul Merlot",
+    "statistics": {
+     "status": "Normal",
+     "ratings_count": 770,
+     "ratings_average": 4.2,
+     "labels_count": 22,
+     "reviews_count": 23
+    }
+   },
+   {
+    "id": 179869364,
+    "seo_name": "patritti-primogenito-sangre-azul-merlot-2024",
+    "year": "2024",
+    "name": "Patritti Primogénito Sangre Azul Merlot 2024",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 0,
+     "ratings_average": 0,
+     "labels_count": 0,
+     "reviews_count": 0
+    }
+   },
+   {
+    "id": 160209374,
+    "seo_name": "patritti-primogenito-sangre-azul-merlot-2018",
+    "year": "2018",
+    "name": "Patritti Primogénito Sangre Azul Merlot 2018",
+    "statistics": {
+     "status": "Normal",
+     "ratings_count": 30,
+     "ratings_average": 4.2,
+     "labels_count": 47,
+     "reviews_count": 15
+    }
+   }
+  ],
+  "winery": {
+   "name": "Patritti",
+   "seo_name": "patritti"
+  },
+  "statistics": {
+   "status": "Normal",
+   "ratings_count": 770,
+   "labels_count": 3018,
+   "unified_average_ratings": 0,
+   "ratings_average": 4.2
+  }
+ },
+ {
+  "id": 1221192,
+  "name": "Tempranillo - Shiraz",
+  "seo_name": "temporanillo-shiraz",
+  "region": {
+   "country": "es"
+  },
+  "vintages": [
+   {
+    "id": 1478314,
+    "seo_name": "costa-azul-temporanillo-shiraz-uv",
+    "year": "U.V.",
+    "name": "Costa Azul Tempranillo - Shiraz",
+    "statistics": {
+     "status": "Normal",
+     "ratings_count": 293,
+     "ratings_average": 2.9,
+     "labels_count": 90,
+     "reviews_count": 3
+    }
+   },
+   {
+    "id": 161725427,
+    "seo_name": "costa-azul-temporanillo-shiraz-2018",
+    "year": "2018",
+    "name": "Costa Azul Tempranillo - Shiraz 2018",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 1,
+     "ratings_average": 0,
+     "labels_count": 60,
+     "reviews_count": 0
+    }
+   }
+  ],
+  "winery": {
+   "name": "Costa Azul",
+   "seo_name": "costa-azul"
+  },
+  "statistics": {
+   "status": "Normal",
+   "ratings_count": 293,
+   "labels_count": 2366,
+   "unified_average_ratings": 0,
+   "ratings_average": 2.9
+  }
+ },
+ {
+  "id": 6683931,
+  "name": "Primogénito Sangre Azul Pinot Noir",
+  "seo_name": "primogenito-sangre-azul-pinot-noir",
+  "region": {
+   "country": "ar"
+  },
+  "vintages": [
+   {
+    "id": 158320597,
+    "seo_name": "patritti-primogenito-sangre-azul-pinot-noir-uv",
+    "year": "U.V.",
+    "name": "Patritti Primogénito Sangre Azul Pinot Noir",
+    "statistics": {
+     "status": "Normal",
+     "ratings_count": 363,
+     "ratings_average": 4,
+     "labels_count": 6,
+     "reviews_count": 8
+    }
+   },
+   {
+    "id": 176777608,
+    "seo_name": "patritti-primogenito-sangre-azul-pinot-noir-2024",
+    "year": "2024",
+    "name": "Patritti Primogénito Sangre Azul Pinot Noir 2024",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 0,
+     "ratings_average": 0,
+     "labels_count": 0,
+     "reviews_count": 0
+    }
+   },
+   {
+    "id": 159759331,
+    "seo_name": "patritti-primogenito-sangre-azul-pinot-noir-2018",
+    "year": "2018",
+    "name": "Patritti Primogénito Sangre Azul Pinot Noir 2018",
+    "statistics": {
+     "status": "Normal",
+     "ratings_count": 55,
+     "ratings_average": 4.1,
+     "labels_count": 231,
+     "reviews_count": 16
+    }
+   }
+  ],
+  "winery": {
+   "name": "Patritti",
+   "seo_name": "patritti"
+  },
+  "statistics": {
+   "status": "Normal",
+   "ratings_count": 363,
+   "labels_count": 1249,
+   "unified_average_ratings": 0,
+   "ratings_average": 4
+  }
+ },
+ {
+  "id": 12256680,
+  "name": "Sangre de Toro Reserva Tempranillo",
+  "seo_name": "sangre-de-toro-reserva-tempranillo",
+  "region": {
+   "country": "es"
+  },
+  "vintages": [
+   {
+    "id": 176739563,
+    "seo_name": "familia-torres-sangre-de-toro-reserva-tempranillo-uv",
+    "year": "U.V.",
+    "name": "Familia Torres Sangre de Toro Reserva Tempranillo",
+    "statistics": {
+     "status": "Normal",
+     "ratings_count": 212,
+     "ratings_average": 3.8,
+     "labels_count": 792,
+     "reviews_count": 21
+    }
+   },
+   {
+    "id": 180161001,
+    "seo_name": "familia-torres-sangre-de-toro-reserva-tempranillo-2024",
+    "year": "2024",
+    "name": "Familia Torres Sangre de Toro Reserva Tempranillo 2024",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 1,
+     "ratings_average": 0,
+     "labels_count": 10,
+     "reviews_count": 1
+    }
+   },
+   {
+    "id": 176918509,
+    "seo_name": "familia-torres-sangre-de-toro-reserva-tempranillo-2018",
+    "year": "2018",
+    "name": "Familia Torres Sangre de Toro Reserva Tempranillo 2018",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 8,
+     "ratings_average": 0,
+     "labels_count": 12,
+     "reviews_count": 5
+    }
+   }
+  ],
+  "winery": {
+   "name": "Familia Torres",
+   "seo_name": "familia-torres"
+  },
+  "statistics": {
+   "status": "Normal",
+   "ratings_count": 212,
+   "labels_count": 1122,
+   "unified_average_ratings": 0,
+   "ratings_average": 3.8
+  }
+ }
+]

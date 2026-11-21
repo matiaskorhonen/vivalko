@@ -65,21 +65,49 @@ function coverage(needles: string[], haystack: Set<string>): number {
 export interface ScoredHit {
   hit: VivinoHit;
   score: number;
+  /** Share of Vivino's producer words that appear in the Alko name. */
   wineryCoverage: number;
+  /** Share of Vivino's wine-name words that appear in the Alko name. */
   nameCoverage: number;
+  /** Share of the Alko name's words that appear anywhere in Vivino's producer + wine name. */
+  alkoCoverage: number;
+  countryMismatch: boolean;
 }
 
 export function scoreHit(product: AlkoProduct, hit: VivinoHit): ScoredHit {
-  const alko = new Set(significantTokens(product.name));
-  const wineryCoverage = coverage(significantTokens(hit.winery?.name ?? ''), alko);
-  const nameCoverage = coverage(significantTokens(hit.name), alko);
+  const alkoTokens = significantTokens(toSearchQuery(product.name));
+  const alko = new Set(alkoTokens);
+  const wineryTokens = significantTokens(hit.winery?.name ?? '');
+  const nameTokens = significantTokens(hit.name);
+  const vivino = new Set([...wineryTokens, ...nameTokens]);
 
-  let score = 2 * wineryCoverage + nameCoverage;
+  const wineryCoverage = coverage(wineryTokens, alko);
+  const nameCoverage = coverage(nameTokens, alko);
+  const alkoCoverage = coverage(alkoTokens, vivino);
+
   const expected = countryCode(product.country);
   const actual = hit.region?.country;
-  if (expected && actual) score += expected === actual ? 0.5 : -1;
+  const countryMismatch = !!expected && !!actual && expected !== actual;
 
-  return { hit, score, wineryCoverage, nameCoverage };
+  const score = 2 * wineryCoverage + nameCoverage + alkoCoverage + (expected === actual ? 0.5 : 0);
+  return { hit, score, wineryCoverage, nameCoverage, alkoCoverage, countryMismatch };
+}
+
+/**
+ * Whether a hit is believable at all. A wrong rating is worse than none, so
+ * this is strict: one shared producer word plus a grape name is not enough.
+ */
+function isPlausible(s: ScoredHit, rank: number): boolean {
+  if (s.countryMismatch) return false;
+  // Every producer word is in the Alko name ("Quinta do Crasto ...").
+  if (s.wineryCoverage === 1) return true;
+  // Part of the producer plus the full, multi-word wine name.
+  if (s.wineryCoverage >= 0.5 && s.nameCoverage === 1 && significantTokens(s.hit.name).length >= 2) {
+    return true;
+  }
+  // Alko sometimes names the wine without its producer ("Château Malvat" is made by
+  // Château Villars). Only trust that when Algolia itself ranks the hit first.
+  return rank === 0 && s.alkoCoverage === 1;
 }
 
 /**
@@ -92,11 +120,8 @@ export function pickBestHit(product: AlkoProduct, hits: VivinoHit[]): VivinoHit 
   let best: { hit: VivinoHit; rankedScore: number } | undefined;
   hits.forEach((hit, rank) => {
     const s = scoreHit(product, hit);
-    const plausible =
-      s.wineryCoverage >= 0.5 ||
-      (s.nameCoverage === 1 && significantTokens(hit.name).length >= 2);
     const rankedScore = s.score - 0.25 * rank;
-    if (plausible && s.score >= 1.2 && (!best || rankedScore > best.rankedScore)) {
+    if (isPlausible(s, rank) && (!best || rankedScore > best.rankedScore)) {
       best = { hit, rankedScore };
     }
   });

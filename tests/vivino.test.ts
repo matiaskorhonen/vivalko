@@ -10,6 +10,8 @@ import { lookupProduct, pickBestHit, toResult, type VivinoHit } from '../utils/v
 import chiarlo from './fixtures/chiarlo.json';
 import crasto from './fixtures/crasto.json';
 import malmaison from './fixtures/malmaison.json';
+import malvat from './fixtures/malvat.json';
+import sangreazul from './fixtures/sangreazul.json';
 import zensa from './fixtures/zensa.json';
 
 describe('normalize', () => {
@@ -63,12 +65,23 @@ describe('pickBestHit', () => {
     expect(pickBestHit(product, [...crasto, ...chiarlo] as VivinoHit[])).toBeUndefined();
   });
 
-  it('penalizes a country mismatch', () => {
-    const product = { id: '1', name: 'Zensa Primitivo Organico', country: 'Chile' };
-    // Producer still matches strongly, so it is accepted, but with a lower score.
-    expect(pickBestHit(product, zensa as VivinoHit[])).toBeDefined();
-    const wrong = { id: '1', name: 'Primitivo Organico', country: 'Chile' };
-    expect(pickBestHit(wrong, zensa as VivinoHit[])).toBeUndefined();
+  it('rejects a country mismatch', () => {
+    expect(pickBestHit({ id: '1', name: 'Zensa Primitivo Organico', country: 'Italia' }, zensa as VivinoHit[])).toBeDefined();
+    expect(pickBestHit({ id: '1', name: 'Zensa Primitivo Organico', country: 'Chile' }, zensa as VivinoHit[])).toBeUndefined();
+  });
+
+  it('matches a wine sold without its producer name when Algolia ranks it first', () => {
+    // Vivino lists Château Malvat under its producer, Château Villars.
+    const product = { id: '436367', name: 'Château Malvat 2018', country: 'Ranska' };
+    expect(pickBestHit(product, malvat as VivinoHit[])?.name).toBe('Château Malvat Fronsac');
+    // Further down the ranking, a name-only match is not trusted.
+    expect(pickBestHit(product, (malvat as VivinoHit[]).slice(1))).toBeUndefined();
+  });
+
+  it('does not match on one shared producer word plus a grape', () => {
+    // Real Vivino results for this query: "Azul y Garanza Tempranillo", "Sangre de Toro Tempranillo", ...
+    const product = { id: '1', name: 'Sangre Azul Tempranillo', country: 'Espanja' };
+    expect(pickBestHit(product, sangreazul as VivinoHit[])).toBeUndefined();
   });
 });
 
