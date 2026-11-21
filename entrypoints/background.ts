@@ -1,4 +1,5 @@
 import { getCached, setCached } from '@/utils/cache';
+import { createLimiter } from '@/utils/limit';
 import type { LookupRequest, LookupResponse, LookupResult } from '@/utils/types';
 import { lookupProduct } from '@/utils/vivino';
 
@@ -7,19 +8,7 @@ const MAX_CONCURRENT = 3;
 
 export default defineBackground(() => {
   const inFlight = new Map<string, Promise<LookupResult>>();
-  const waiting: (() => void)[] = [];
-  let running = 0;
-
-  async function withSlot<T>(fn: () => Promise<T>): Promise<T> {
-    if (running >= MAX_CONCURRENT) await new Promise<void>((resolve) => waiting.push(resolve));
-    running++;
-    try {
-      return await fn();
-    } finally {
-      running--;
-      waiting.shift()?.();
-    }
-  }
+  const withSlot = createLimiter(MAX_CONCURRENT);
 
   async function lookup(req: LookupRequest): Promise<LookupResult> {
     const { product } = req;

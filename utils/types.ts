@@ -8,6 +8,8 @@ export interface AlkoProduct {
   country?: string;
   /** Category in the page locale, e.g. "Punaviinit". */
   category?: string;
+  /** Producer from Alko's catalog. Sometimes the importer or brand owner instead. */
+  producer?: string;
 }
 
 export type LookupResult =

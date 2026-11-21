@@ -71,10 +71,44 @@ export const STOPWORDS = new Set([
   'family', 'de', 'del', 'della', 'di', 'da', 'do', 'dos', 'das', 'du', 'des', 'la', 'le',
   'les', 'el', 'los', 'las', 'il', 'lo', 'von', 'van', 'der', 'den', 'the', 'and', 'et',
   'e', 'y', 'und', 'st', 'saint', 'sainte', 'san', 'santa',
+  // Company forms, common in Alko's producer field.
+  'oy', 'ab', 'ltd', 'sa', 'spa', 'srl', 'sarl', 'sas', 'gmbh', 'ag', 'inc', 'co', 'llc',
+  'group', 'groupe', 'company', 'compagnie', 'vinicole', 'vins', 'vini', 'vinos',
 ]);
 
 export function significantTokens(s: string): string[] {
   return tokens(s).filter((t) => !STOPWORDS.has(t) && !/^\d+$/.test(t));
+}
+
+/**
+ * Grape, colour and style words. Many unrelated wines share them, so they
+ * cannot tell two wines from the same producer apart.
+ */
+const GRAPE_WORDS = new Set([
+  'cabernet', 'sauvignon', 'merlot', 'pinot', 'noir', 'grigio', 'gris', 'chardonnay',
+  'riesling', 'syrah', 'shiraz', 'tempranillo', 'malbec', 'zinfandel', 'primitivo',
+  'sangiovese', 'nebbiolo', 'barbera', 'grenache', 'garnacha', 'carmenere', 'viognier',
+  'chenin', 'gewurztraminer', 'gruner', 'veltliner', 'albarino', 'verdejo', 'moscato',
+  'muscat', 'monastrell', 'mourvedre', 'cinsault', 'pinotage', 'semillon', 'carignan',
+  'mataro', 'aglianico', 'negroamaro', 'montepulciano', 'vermentino', 'trollinger',
+  'spatburgunder', 'grauburgunder', 'weissburgunder', 'colombard',
+]);
+
+const STYLE_WORDS = new Set([
+  'franc', 'red', 'white', 'rose', 'rosso', 'rosato', 'rosado', 'rouge', 'blanc', 'blanco',
+  'bianco', 'branco', 'tinto', 'weiss', 'rot', 'dry', 'sec', 'secco', 'brut', 'extra', 'nature',
+  'trocken', 'organic', 'organico', 'bio', 'reserve', 'reserva', 'riserva', 'crianza',
+  'classic', 'selection', 'cuvee', 'vintage', 'millesime',
+]);
+
+/** Significant tokens that identify a particular wine rather than a grape or style. */
+export function distinctiveTokens(s: string): string[] {
+  return significantTokens(s).filter((t) => !GRAPE_WORDS.has(t) && !STYLE_WORDS.has(t));
+}
+
+/** Grape variety words in a name. */
+export function grapeTokens(s: string): string[] {
+  return significantTokens(s).filter((t) => GRAPE_WORDS.has(t));
 }
 
 /**
@@ -114,4 +148,18 @@ export function isWineCategory(category: string | undefined): boolean {
     return false;
   }
   return /viin|samppanj|wine|champagne|vin/.test(c);
+}
+
+/**
+ * Vivino's wine type (1 red, 2 white, 3 sparkling, 4 rosé) for an Alko category,
+ * or undefined for categories without a clear counterpart (dessert, fortified, ...).
+ */
+export function wineType(category: string | undefined): 1 | 2 | 3 | 4 | undefined {
+  if (!category) return undefined;
+  const c = normalize(category);
+  if (/kuohu|samppanj|mousserande|sparkling|champagne/.test(c)) return 3;
+  if (/^(rosee|rose)/.test(c)) return 4;
+  if (/^(puna|rod|red)/.test(c)) return 1;
+  if (/^(valko|vit|white)/.test(c)) return 2;
+  return undefined;
 }

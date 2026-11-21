@@ -1,6 +1,8 @@
 import { readCard, readProductPage } from '@/utils/alko';
+import { fetchAlkoDetails } from '@/utils/alko-api';
 import { createBadge } from '@/utils/badge';
-import { enabledSetting } from '@/utils/cache';
+import { enabledSetting, getCached } from '@/utils/cache';
+import { createLimiter } from '@/utils/limit';
 import { isWineCategory } from '@/utils/normalize';
 import type { AlkoProduct, LookupRequest, LookupResponse } from '@/utils/types';
 
@@ -11,9 +13,32 @@ export default defineContentScript({
   async main(ctx) {
     if (!(await enabledSetting.getValue())) return;
 
+    // Alko's product API is only reachable from the page itself (the site's firewall
+    // blocks other clients), so catalog details are fetched here, not in the background.
+    const alkoLimit = createLimiter(3);
+    const details = new Map<string, Promise<AlkoProduct>>();
+
+    /** Adds the catalog producer (and country, if the page didn't show one). */
+    function enrich(product: AlkoProduct): Promise<AlkoProduct> {
+      let pending = details.get(product.id);
+      if (!pending) {
+        pending = alkoLimit(() => fetchAlkoDetails(product.id))
+          .then((d) => ({ ...product, producer: d?.producer, country: product.country ?? d?.country }))
+          // Matching still works on the name alone, just less precisely.
+          .catch(() => product);
+        details.set(product.id, pending);
+      }
+      return pending;
+    }
+
     async function fill(render: ReturnType<typeof createBadge>['render'], product: AlkoProduct) {
       try {
-        const req: LookupRequest = { type: 'vivalko:lookup', product };
+        const cached = await getCached(product.id);
+        if (cached) {
+          render({ kind: 'result', result: cached });
+          return;
+        }
+        const req: LookupRequest = { type: 'vivalko:lookup', product: await enrich(product) };
         const res = (await browser.runtime.sendMessage(req)) as LookupResponse | undefined;
         if (!res) throw new Error('No response from background');
         render(res.ok ? { kind: 'result', result: res.result } : { kind: 'error', message: res.error });

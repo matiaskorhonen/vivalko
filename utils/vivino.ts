@@ -1,8 +1,12 @@
 import {
   countryCode,
+  distinctiveTokens,
+  grapeTokens,
   extractVintage,
+  normalize,
   significantTokens,
   toSearchQuery,
+  wineType,
 } from './normalize';
 import type { AlkoProduct, LookupResult } from './types';
 
@@ -26,6 +30,8 @@ export interface VivinoHit {
   seo_name?: string;
   winery?: { name: string; seo_name?: string } | null;
   region?: { country?: string; name?: string } | null;
+  /** 1 red, 2 white, 3 sparkling, 4 rosé, 7 dessert, 24 fortified. */
+  type_id?: number;
   statistics?: Statistics | null;
   vintages?: { id: number; year: string; name: string; statistics?: Statistics | null }[];
 }
@@ -45,7 +51,7 @@ export async function searchVivino(
       query,
       hitsPerPage: 6,
       attributesToRetrieve: [
-        'id', 'name', 'seo_name', 'winery.name', 'winery.seo_name',
+        'id', 'name', 'seo_name', 'type_id', 'winery.name', 'winery.seo_name',
         'region.country', 'region.name', 'statistics', 'vintages',
       ],
       attributesToHighlight: [],
@@ -81,12 +87,42 @@ export interface ScoredHit {
   nameTokenCount: number;
   /** Share of the Alko name's words that appear anywhere in Vivino's producer + wine name. */
   alkoCoverage: number;
+  /** Like alkoCoverage, but only counting words that aren't grapes, colours or styles. */
+  distinctiveCoverage: number;
+  /** Every grape in the Alko name also appears on Vivino. */
+  grapesMatch: boolean;
+  /** Share of Vivino's producer words that appear in Alko's catalog producer. */
+  producerCoverage: number;
+  /** Facts that rule the hit out whatever else matches. */
   countryMismatch: boolean;
+  typeMismatch: boolean;
+  roseMismatch: boolean;
+}
+
+const ROSE_WORDS = ['rose', 'rosato', 'rosado', 'rosa', 'pink'];
+
+/** Lightly sparkling styles that Alko files as still wine but Vivino calls sparkling. */
+const FRIZZANTE_WORDS = ['frizzante', 'asti', 'lambrusco', 'petillant', 'verde', 'moscato'];
+
+/** Vivino type ids that Alko may file under any category. */
+const DESSERT_OR_FORTIFIED = [7, 24];
+
+/**
+ * Whether Vivino's wine type fits Alko's category. Only clear contradictions
+ * count: a red is not a white, and a still wine is not a sparkling one.
+ */
+function typeCompatible(expected: number | undefined, actual: number | undefined, alko: Set<string>): boolean {
+  if (!expected || !actual || expected === actual) return true;
+  if (DESSERT_OR_FORTIFIED.includes(actual)) return true;
+  if (actual === 3 && FRIZZANTE_WORDS.some((w) => alko.has(w))) return true;
+  return false;
 }
 
 export function scoreHit(product: AlkoProduct, hit: VivinoHit): ScoredHit {
-  const alkoTokens = significantTokens(toSearchQuery(product.name));
+  const searchName = toSearchQuery(product.name);
+  const alkoTokens = significantTokens(searchName);
   const alko = new Set(alkoTokens);
+  const producer = new Set(significantTokens(product.producer ?? ''));
   const wineryTokens = significantTokens(hit.winery?.name ?? '');
   const allNameTokens = significantTokens(hit.name);
   const vivino = new Set([...wineryTokens, ...allNameTokens]);
@@ -104,32 +140,64 @@ export function scoreHit(product: AlkoProduct, hit: VivinoHit): ScoredHit {
   const wineryCoverage = coverage(wineryTokens, alko);
   const nameCoverage = nameTokens.length === 0 ? 1 : coverage(nameTokens, alko);
   const alkoCoverage = coverage(alkoTokens, vivino);
+  const distinctiveCoverage = coverage(distinctiveTokens(searchName), vivino);
+  const grapesMatch = grapeTokens(searchName).every((t) => vivino.has(t));
+  const producerCoverage = coverage(wineryTokens, producer);
 
-  const expected = countryCode(product.country);
-  const actual = hit.region?.country;
-  const countryMismatch = !!expected && !!actual && expected !== actual;
+  const expectedCountry = countryCode(product.country);
+  const actualCountry = hit.region?.country;
+  const countryMismatch = !!expectedCountry && !!actualCountry && expectedCountry !== actualCountry;
 
-  const score = 2 * wineryCoverage + nameCoverage + alkoCoverage + (expected === actual ? 0.5 : 0);
+  // Alko's category says red/white/rosé/sparkling; Vivino records the same as type_id.
+  const typeMismatch = !typeCompatible(wineType(product.category), hit.type_id, alko);
+
+  // "Charles Heidsieck Rosé Réserve" is not the house's "Brut Réserve".
+  const alkoSaysRose = ROSE_WORDS.some((w) => alko.has(w));
+  const roseMismatch = alkoSaysRose && hit.type_id !== 4 && !ROSE_WORDS.some((w) => vivino.has(w));
+
+  // A vintage that Vivino has ratings for is a sign of the right wine: Palmer's
+  // "Collection Vintage 1999" is their vintage champagne, not the non-vintage Brut Réserve.
+  const year = extractVintage(product.name);
+  const knownVintage = !!year && !!hit.vintages?.some(
+    (v) => v.year === String(year) && (v.statistics?.ratings_count ?? 0) > 0,
+  );
+
+  const score =
+    2 * wineryCoverage + nameCoverage + alkoCoverage + distinctiveCoverage + producerCoverage +
+    (expectedCountry === actualCountry ? 0.5 : 0) + (knownVintage ? 0.5 : 0);
   return {
-    hit, score, wineryCoverage, nameCoverage, nameTokenCount: nameTokens.length, alkoCoverage, countryMismatch,
+    hit, score, wineryCoverage, nameCoverage, nameTokenCount: nameTokens.length, alkoCoverage,
+    distinctiveCoverage, grapesMatch, producerCoverage, countryMismatch, typeMismatch, roseMismatch,
   };
 }
+
+/** How convincing a hit is: `strong` rests on the producer, `weak` only on Algolia's ranking. */
+type Plausibility = 'strong' | 'weak' | false;
 
 /**
  * Whether a hit is believable at all. A wrong rating is worse than none, so
  * this is strict: one shared producer word plus a grape name is not enough.
  */
-function isPlausible(s: ScoredHit, rank: number): boolean {
-  if (s.countryMismatch) return false;
+function plausibility(s: ScoredHit, rank: number): Plausibility {
+  if (s.countryMismatch || s.typeMismatch || s.roseMismatch) return false;
   // Every producer word is in the Alko name ("Quinta do Crasto ...").
-  if (s.wineryCoverage === 1) return true;
+  if (s.wineryCoverage === 1) return 'strong';
   // Part of the producer plus the full, multi-word wine name.
-  if (s.wineryCoverage >= 0.5 && s.nameCoverage === 1 && s.nameTokenCount >= 2) {
-    return true;
-  }
+  if (s.wineryCoverage >= 0.5 && s.nameCoverage === 1 && s.nameTokenCount >= 2) return 'strong';
+  // Alko's catalog names the producer ("Tanca Farrá" by Sella & Mosca) and the wine's
+  // own distinctive words match. Grapes alone don't count: Alko's producer field is
+  // sometimes a big group like Concha y Toro, which makes many Cabernets.
+  // All of them must match: "Pegasus Tombola" is not San Cassiano's "Pegasus Amarone",
+  // and "Lobetia Tempranillo Shiraz" is not the producer's straight "Lobetia Tempranillo".
+  if (s.producerCoverage === 1 && s.distinctiveCoverage === 1 && s.grapesMatch) return 'strong';
   // Alko sometimes names the wine without its producer ("Château Malvat" is made by
   // Château Villars). Only trust that when Algolia itself ranks the hit first.
-  return rank === 0 && s.alkoCoverage === 1;
+  return rank === 0 && s.alkoCoverage === 1 ? 'weak' : false;
+}
+
+export interface Match {
+  hit: VivinoHit;
+  plausibility: 'strong' | 'weak';
 }
 
 /**
@@ -138,16 +206,19 @@ function isPlausible(s: ScoredHit, rank: number): boolean {
  * Algolia already handles things like "Old Vines" vs "Vinhas Velhas" better
  * than token overlap can.
  */
-export function pickBestHit(product: AlkoProduct, hits: VivinoHit[]): VivinoHit | undefined {
-  let best: { hit: VivinoHit; rankedScore: number } | undefined;
+export function pickBestMatch(product: AlkoProduct, hits: VivinoHit[]): Match | undefined {
+  let best: (Match & { rankedScore: number }) | undefined;
   hits.forEach((hit, rank) => {
     const s = scoreHit(product, hit);
+    const p = plausibility(s, rank);
     const rankedScore = s.score - 0.25 * rank;
-    if (isPlausible(s, rank) && (!best || rankedScore > best.rankedScore)) {
-      best = { hit, rankedScore };
-    }
+    if (p && (!best || rankedScore > best.rankedScore)) best = { hit, plausibility: p, rankedScore };
   });
-  return best?.hit;
+  return best && { hit: best.hit, plausibility: best.plausibility };
+}
+
+export function pickBestHit(product: AlkoProduct, hits: VivinoHit[]): VivinoHit | undefined {
+  return pickBestMatch(product, hits)?.hit;
 }
 
 function hasRating(s: Statistics | null | undefined): s is Statistics {
@@ -201,8 +272,26 @@ export async function lookupProduct(
   fetchImpl: typeof fetch = fetch,
 ): Promise<LookupResult> {
   const query = toSearchQuery(product.name);
-  const hits = await searchVivino(query, fetchImpl);
-  const hit = pickBestHit(product, hits);
-  if (!hit) return { status: 'not-found', searchUrl: vivinoSearchUrl(query) };
-  return toResult(hit, extractVintage(product.name));
+  let match = pickBestMatch(product, await searchVivino(query, fetchImpl));
+
+  // Alko often leaves the producer out of the name ("Tanca Farrá" by Sella & Mosca).
+  // If the name alone found nothing, or only a match that rests on Algolia's ranking,
+  // search again with the catalog producer in front and prefer a producer-backed match:
+  // "Special Club Premier Cru 2016" by Gaston Chiquet is not Marc Hébrart's Special Club.
+  const withProducer = producerQuery(product.producer, query);
+  if (withProducer && match?.plausibility !== 'strong') {
+    const retry = pickBestMatch(product, await searchVivino(withProducer, fetchImpl));
+    if (retry && (!match || retry.plausibility === 'strong')) match = retry;
+  }
+
+  if (!match) return { status: 'not-found', searchUrl: vivinoSearchUrl(query) };
+  return toResult(match.hit, extractVintage(product.name));
+}
+
+/** The search query with the producer added, or undefined if it adds nothing new. */
+export function producerQuery(producer: string | undefined, query: string): string | undefined {
+  if (!producer) return undefined;
+  const inQuery = new Set(significantTokens(query));
+  const extra = significantTokens(producer).filter((t) => !inQuery.has(t));
+  return extra.length > 0 ? `${normalize(producer)} ${query}` : undefined;
 }
