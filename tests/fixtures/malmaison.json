@@ -4,6 +4,7 @@
   "name": "Moulis-en-Médoc",
   "seo_name": "moulis-en-medoc",
   "region": {
+   "name": "Moulis-en-Médoc",
    "country": "fr"
   },
   "vintages": [
@@ -73,6 +74,19 @@
     }
    },
    {
+    "id": 158958587,
+    "seo_name": "malmaison-moulis-en-medoc-2018",
+    "year": "2018",
+    "name": "Château Malmaison Moulis-en-Médoc 2018",
+    "statistics": {
+     "status": "Normal",
+     "ratings_count": 181,
+     "ratings_average": 3.9,
+     "labels_count": 3499,
+     "reviews_count": 57
+    }
+   },
+   {
     "id": 150626794,
     "seo_name": "malmaison-moulis-en-medoc-2017",
     "year": "2017",
@@ -83,6 +97,19 @@
      "ratings_average": 4,
      "labels_count": 1112,
      "reviews_count": 11
+    }
+   },
+   {
+    "id": 1393335,
+    "seo_name": "malmaison-moulis-en-medoc-2000",
+    "year": "2000",
+    "name": "Château Malmaison Moulis-en-Médoc 2000",
+    "statistics": {
+     "status": "Normal",
+     "ratings_count": 77,
+     "ratings_average": 3.7,
+     "labels_count": 1213,
+     "reviews_count": 16
     }
    }
   ],

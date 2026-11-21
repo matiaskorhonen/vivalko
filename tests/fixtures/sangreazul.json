@@ -4,6 +4,7 @@
   "name": "Sangre de Toro Tempranillo",
   "seo_name": "sangre-de-toro-tempranillo-la-mancha",
   "region": {
+   "name": "La Mancha",
    "country": "es"
   },
   "vintages": [
@@ -21,6 +22,19 @@
     }
    },
    {
+    "id": 182492986,
+    "seo_name": "familia-torres-sangre-de-toro-tempranillo-la-mancha-2025",
+    "year": "2025",
+    "name": "Familia Torres Sangre de Toro Tempranillo 2025",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 2,
+     "ratings_average": 0,
+     "labels_count": 27,
+     "reviews_count": 0
+    }
+   },
+   {
     "id": 179681685,
     "seo_name": "familia-torres-sangre-de-toro-tempranillo-la-mancha-2024",
     "year": "2024",
@@ -34,6 +48,32 @@
     }
    },
    {
+    "id": 174066395,
+    "seo_name": "familia-torres-sangre-de-toro-tempranillo-la-mancha-2023",
+    "year": "2023",
+    "name": "Familia Torres Sangre de Toro Tempranillo 2023",
+    "statistics": {
+     "status": "Normal",
+     "ratings_count": 34,
+     "ratings_average": 3.8,
+     "labels_count": 577,
+     "reviews_count": 10
+    }
+   },
+   {
+    "id": 170490132,
+    "seo_name": "familia-torres-sangre-de-toro-tempranillo-la-mancha-2022",
+    "year": "2022",
+    "name": "Familia Torres Sangre de Toro Tempranillo 2022",
+    "statistics": {
+     "status": "Normal",
+     "ratings_count": 152,
+     "ratings_average": 3.5,
+     "labels_count": 1876,
+     "reviews_count": 35
+    }
+   },
+   {
     "id": 156133171,
     "seo_name": "familia-torres-sangre-de-toro-tempranillo-la-mancha-2018",
     "year": "2018",
@@ -44,6 +84,32 @@
      "ratings_average": 3.8,
      "labels_count": 60027,
      "reviews_count": 988
+    }
+   },
+   {
+    "id": 150501288,
+    "seo_name": "familia-torres-sangre-de-toro-tempranillo-la-mancha-2017",
+    "year": "2017",
+    "name": "Familia Torres Sangre de Toro Tempranillo 2017",
+    "statistics": {
+     "status": "Normal",
+     "ratings_count": 2933,
+     "ratings_average": 3.8,
+     "labels_count": 41337,
+     "reviews_count": 938
+    }
+   },
+   {
+    "id": 84869701,
+    "seo_name": "familia-torres-sangre-de-toro-tempranillo-la-mancha-2000",
+    "year": "2000",
+    "name": "Familia Torres Sangre de Toro Tempranillo 2000",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 0,
+     "ratings_average": 0,
+     "labels_count": 24,
+     "reviews_count": 0
     }
    }
   ],
@@ -64,6 +130,7 @@
   "name": "Tempranillo",
   "seo_name": "tempranillo",
   "region": {
+   "name": "Navarra",
    "country": "es"
   },
   "vintages": [
@@ -81,6 +148,19 @@
     }
    },
    {
+    "id": 183181569,
+    "seo_name": "azul-y-garanza-tempranillo-2025",
+    "year": "2025",
+    "name": "Azul y Garanza Tempranillo 2025",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 0,
+     "ratings_average": 0,
+     "labels_count": 4,
+     "reviews_count": 0
+    }
+   },
+   {
     "id": 181975227,
     "seo_name": "azul-y-garanza-tempranillo-2024",
     "year": "2024",
@@ -94,6 +174,32 @@
     }
    },
    {
+    "id": 177749923,
+    "seo_name": "azul-y-garanza-tempranillo-2023",
+    "year": "2023",
+    "name": "Azul y Garanza Tempranillo 2023",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 1,
+     "ratings_average": 0,
+     "labels_count": 6,
+     "reviews_count": 1
+    }
+   },
+   {
+    "id": 172674763,
+    "seo_name": "azul-y-garanza-tempranillo-2022",
+    "year": "2022",
+    "name": "Azul y Garanza Tempranillo 2022",
+    "statistics": {
+     "status": "Normal",
+     "ratings_count": 72,
+     "ratings_average": 3.8,
+     "labels_count": 726,
+     "reviews_count": 19
+    }
+   },
+   {
     "id": 160887937,
     "seo_name": "azul-y-garanza-tempranillo-2018",
     "year": "2018",
@@ -104,6 +210,32 @@
      "ratings_average": 3.9,
      "labels_count": 1169,
      "reviews_count": 79
+    }
+   },
+   {
+    "id": 153421058,
+    "seo_name": "azul-y-garanza-tempranillo-2017",
+    "year": "2017",
+    "name": "Azul y Garanza Tempranillo 2017",
+    "statistics": {
+     "status": "Normal",
+     "ratings_count": 149,
+     "ratings_average": 3.6,
+     "labels_count": 916,
+     "reviews_count": 53
+    }
+   },
+   {
+    "id": 158036223,
+    "seo_name": "azul-y-garanza-tempranillo-2000",
+    "year": "2000",
+    "name": "Azul y Garanza Tempranillo 2000",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 0,
+     "ratings_average": 0,
+     "labels_count": 0,
+     "reviews_count": 0
     }
    }
   ],
@@ -124,6 +256,7 @@
   "name": "Primogénito Sangre Azul Merlot",
   "seo_name": "primogenito-sangre-azul-merlot",
   "region": {
+   "name": "Patagonia",
    "country": "ar"
   },
   "vintages": [
@@ -141,6 +274,19 @@
     }
    },
    {
+    "id": 181643761,
+    "seo_name": "patritti-primogenito-sangre-azul-merlot-2025",
+    "year": "2025",
+    "name": "Patritti Primogénito Sangre Azul Merlot 2025",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 5,
+     "ratings_average": 0,
+     "labels_count": 32,
+     "reviews_count": 3
+    }
+   },
+   {
     "id": 179869364,
     "seo_name": "patritti-primogenito-sangre-azul-merlot-2024",
     "year": "2024",
@@ -154,6 +300,32 @@
     }
    },
    {
+    "id": 177684242,
+    "seo_name": "patritti-primogenito-sangre-azul-merlot-2023",
+    "year": "2023",
+    "name": "Patritti Primogénito Sangre Azul Merlot 2023",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 0,
+     "ratings_average": 0,
+     "labels_count": 0,
+     "reviews_count": 0
+    }
+   },
+   {
+    "id": 177438569,
+    "seo_name": "patritti-primogenito-sangre-azul-merlot-2022",
+    "year": "2022",
+    "name": "Patritti Primogénito Sangre Azul Merlot 2022",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 16,
+     "ratings_average": 0,
+     "labels_count": 23,
+     "reviews_count": 7
+    }
+   },
+   {
     "id": 160209374,
     "seo_name": "patritti-primogenito-sangre-azul-merlot-2018",
     "year": "2018",
@@ -164,6 +336,19 @@
      "ratings_average": 4.2,
      "labels_count": 47,
      "reviews_count": 15
+    }
+   },
+   {
+    "id": 151552852,
+    "seo_name": "patritti-primogenito-sangre-azul-merlot-2017",
+    "year": "2017",
+    "name": "Patritti Primogénito Sangre Azul Merlot 2017",
+    "statistics": {
+     "status": "Normal",
+     "ratings_count": 77,
+     "ratings_average": 4.1,
+     "labels_count": 305,
+     "reviews_count": 37
     }
    }
   ],
@@ -184,6 +369,7 @@
   "name": "Tempranillo - Shiraz",
   "seo_name": "temporanillo-shiraz",
   "region": {
+   "name": "La Mancha",
    "country": "es"
   },
   "vintages": [
@@ -201,6 +387,19 @@
     }
    },
    {
+    "id": 183573546,
+    "seo_name": "costa-azul-temporanillo-shiraz-2023",
+    "year": "2023",
+    "name": "Costa Azul Tempranillo - Shiraz 2023",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 0,
+     "ratings_average": 0,
+     "labels_count": 0,
+     "reviews_count": 0
+    }
+   },
+   {
     "id": 161725427,
     "seo_name": "costa-azul-temporanillo-shiraz-2018",
     "year": "2018",
@@ -211,6 +410,32 @@
      "ratings_average": 0,
      "labels_count": 60,
      "reviews_count": 0
+    }
+   },
+   {
+    "id": 152197600,
+    "seo_name": "costa-azul-temporanillo-shiraz-2017",
+    "year": "2017",
+    "name": "Costa Azul Tempranillo - Shiraz 2017",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 0,
+     "ratings_average": 0,
+     "labels_count": 0,
+     "reviews_count": 0
+    }
+   },
+   {
+    "id": 7279347,
+    "seo_name": "costa-azul-temporanillo-shiraz-2000",
+    "year": "2000",
+    "name": "Costa Azul Tempranillo - Shiraz 2000",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 1,
+     "ratings_average": 0,
+     "labels_count": 12,
+     "reviews_count": 1
     }
    }
   ],
@@ -231,6 +456,7 @@
   "name": "Primogénito Sangre Azul Pinot Noir",
   "seo_name": "primogenito-sangre-azul-pinot-noir",
   "region": {
+   "name": "Patagonia",
    "country": "ar"
   },
   "vintages": [
@@ -248,6 +474,19 @@
     }
    },
    {
+    "id": 181747639,
+    "seo_name": "patritti-primogenito-sangre-azul-pinot-noir-2025",
+    "year": "2025",
+    "name": "Patritti Primogénito Sangre Azul Pinot Noir 2025",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 5,
+     "ratings_average": 0,
+     "labels_count": 15,
+     "reviews_count": 0
+    }
+   },
+   {
     "id": 176777608,
     "seo_name": "patritti-primogenito-sangre-azul-pinot-noir-2024",
     "year": "2024",
@@ -261,6 +500,32 @@
     }
    },
    {
+    "id": 182707726,
+    "seo_name": "patritti-primogenito-sangre-azul-pinot-noir-2023",
+    "year": "2023",
+    "name": "Patritti Primogénito Sangre Azul Pinot Noir 2023",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 0,
+     "ratings_average": 0,
+     "labels_count": 0,
+     "reviews_count": 0
+    }
+   },
+   {
+    "id": 176780922,
+    "seo_name": "patritti-primogenito-sangre-azul-pinot-noir-2022",
+    "year": "2022",
+    "name": "Patritti Primogénito Sangre Azul Pinot Noir 2022",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 4,
+     "ratings_average": 0,
+     "labels_count": 7,
+     "reviews_count": 4
+    }
+   },
+   {
     "id": 159759331,
     "seo_name": "patritti-primogenito-sangre-azul-pinot-noir-2018",
     "year": "2018",
@@ -271,6 +536,32 @@
      "ratings_average": 4.1,
      "labels_count": 231,
      "reviews_count": 16
+    }
+   },
+   {
+    "id": 159759230,
+    "seo_name": "patritti-primogenito-sangre-azul-pinot-noir-2017",
+    "year": "2017",
+    "name": "Patritti Primogénito Sangre Azul Pinot Noir 2017",
+    "statistics": {
+     "status": "Normal",
+     "ratings_count": 69,
+     "ratings_average": 4,
+     "labels_count": 245,
+     "reviews_count": 33
+    }
+   },
+   {
+    "id": 183394945,
+    "seo_name": "patritti-primogenito-sangre-azul-pinot-noir-2000",
+    "year": "2000",
+    "name": "Patritti Primogénito Sangre Azul Pinot Noir 2000",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 0,
+     "ratings_average": 0,
+     "labels_count": 0,
+     "reviews_count": 0
     }
    }
   ],
@@ -291,6 +582,7 @@
   "name": "Sangre de Toro Reserva Tempranillo",
   "seo_name": "sangre-de-toro-reserva-tempranillo",
   "region": {
+   "name": "Catalunya",
    "country": "es"
   },
   "vintages": [
@@ -308,6 +600,19 @@
     }
    },
    {
+    "id": 183437860,
+    "seo_name": "familia-torres-sangre-de-toro-reserva-tempranillo-2025",
+    "year": "2025",
+    "name": "Familia Torres Sangre de Toro Reserva Tempranillo 2025",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 0,
+     "ratings_average": 0,
+     "labels_count": 2,
+     "reviews_count": 0
+    }
+   },
+   {
     "id": 180161001,
     "seo_name": "familia-torres-sangre-de-toro-reserva-tempranillo-2024",
     "year": "2024",
@@ -321,6 +626,32 @@
     }
    },
    {
+    "id": 179863095,
+    "seo_name": "familia-torres-sangre-de-toro-reserva-tempranillo-2023",
+    "year": "2023",
+    "name": "Familia Torres Sangre de Toro Reserva Tempranillo 2023",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 2,
+     "ratings_average": 0,
+     "labels_count": 11,
+     "reviews_count": 1
+    }
+   },
+   {
+    "id": 178878844,
+    "seo_name": "familia-torres-sangre-de-toro-reserva-tempranillo-2022",
+    "year": "2022",
+    "name": "Familia Torres Sangre de Toro Reserva Tempranillo 2022",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 1,
+     "ratings_average": 0,
+     "labels_count": 8,
+     "reviews_count": 0
+    }
+   },
+   {
     "id": 176918509,
     "seo_name": "familia-torres-sangre-de-toro-reserva-tempranillo-2018",
     "year": "2018",
@@ -331,6 +662,19 @@
      "ratings_average": 0,
      "labels_count": 12,
      "reviews_count": 5
+    }
+   },
+   {
+    "id": 176906224,
+    "seo_name": "familia-torres-sangre-de-toro-reserva-tempranillo-2017",
+    "year": "2017",
+    "name": "Familia Torres Sangre de Toro Reserva Tempranillo 2017",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 21,
+     "ratings_average": 0,
+     "labels_count": 50,
+     "reviews_count": 10
     }
    }
   ],

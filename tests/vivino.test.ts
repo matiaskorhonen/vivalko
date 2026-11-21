@@ -9,6 +9,7 @@ import {
 import { lookupProduct, pickBestHit, toResult, type VivinoHit } from '../utils/vivino';
 import chiarlo from './fixtures/chiarlo.json';
 import crasto from './fixtures/crasto.json';
+import lafite from './fixtures/lafite.json';
 import malmaison from './fixtures/malmaison.json';
 import malvat from './fixtures/malvat.json';
 import sangreazul from './fixtures/sangreazul.json';
@@ -25,6 +26,10 @@ describe('normalize', () => {
     );
     expect(toSearchQuery('Vegas del Rivilla Tinto kartonkitölkki')).toBe('vegas del rivilla tinto');
     expect(toSearchQuery('Foo Double Magnum 2019')).toBe('foo');
+    expect(toSearchQuery('Château Lafite Rothschild (erittäin rajallinen saatavuus, 1plo/asiakas) 2000')).toBe(
+      'chateau lafite rothschild',
+    );
+    expect(toSearchQuery('Setencostas Rosé 8% 2025')).toBe('setencostas rose');
   });
 
   it('extracts vintages', () => {
@@ -63,6 +68,16 @@ describe('pickBestHit', () => {
   it('rejects hits from an unrelated producer', () => {
     const product = { id: '1', name: 'Domaine Inconnu Cuvée Rare 2019', country: 'Ranska' };
     expect(pickBestHit(product, [...crasto, ...chiarlo] as VivinoHit[])).toBeUndefined();
+  });
+
+  it("prefers a château's grand vin over its second wine", () => {
+    // Vivino names the grand vin after its appellation: "Pauillac (Premier Grand Cru Classé)".
+    const product = {
+      id: '888199',
+      name: 'Château Lafite Rothschild (erittäin rajallinen saatavuus, 1plo/asiakas) 2000',
+      country: 'Ranska',
+    };
+    expect(pickBestHit(product, lafite as VivinoHit[])?.name).toBe('Pauillac (Premier Grand Cru Classé)');
   });
 
   it('rejects a country mismatch', () => {

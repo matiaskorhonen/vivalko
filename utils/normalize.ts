@@ -50,7 +50,10 @@ export function extractVintage(name: string): number | undefined {
 
 /** Turns an Alko product name into a Vivino search query. */
 export function toSearchQuery(name: string): string {
-  return normalize(name)
+  // Drop availability notes like "(erittäin rajallinen saatavuus, 1plo/asiakas)" and
+  // alcohol strengths like "8%" before normalizing away the punctuation that marks them.
+  const cleaned = name.replace(/\([^)]*\)/g, ' ').replace(/\b\d+(?:[.,]\d+)?\s*%/g, ' ');
+  return normalize(cleaned)
     .replace(new RegExp(VINTAGE_RE.source, 'g'), ' ')
     .replace(PACKAGING_RE, ' ')
     .replace(/\s+/g, ' ')

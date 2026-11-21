@@ -4,6 +4,7 @@
   "name": "Reserva Vinhas Velhas",
   "seo_name": "reserva-vinhas-velhas",
   "region": {
+   "name": "Douro",
    "country": "pt"
   },
   "vintages": [
@@ -73,6 +74,19 @@
     }
    },
    {
+    "id": 156190727,
+    "seo_name": "quinta-do-crasto-reserva-vinhas-velhas-2018",
+    "year": "2018",
+    "name": "Quinta do Crasto Reserva Vinhas Velhas 2018",
+    "statistics": {
+     "status": "Normal",
+     "ratings_count": 1942,
+     "ratings_average": 4.4,
+     "labels_count": 17081,
+     "reviews_count": 528
+    }
+   },
+   {
     "id": 150272216,
     "seo_name": "quinta-do-crasto-reserva-vinhas-velhas-2017",
     "year": "2017",
@@ -83,6 +97,19 @@
      "ratings_average": 4.4,
      "labels_count": 23604,
      "reviews_count": 909
+    }
+   },
+   {
+    "id": 2395423,
+    "seo_name": "quinta-do-crasto-reserva-vinhas-velhas-2000",
+    "year": "2000",
+    "name": "Quinta do Crasto Reserva Vinhas Velhas 2000",
+    "statistics": {
+     "status": "Normal",
+     "ratings_count": 84,
+     "ratings_average": 4.4,
+     "labels_count": 559,
+     "reviews_count": 25
     }
    }
   ],
@@ -103,6 +130,7 @@
   "name": "Etiqueta Negra Reserva",
   "seo_name": "etiqueta-negra-reserva",
   "region": {
+   "name": "Douro",
    "country": "pt"
   },
   "vintages": [
@@ -146,6 +174,19 @@
     }
    },
    {
+    "id": 156971069,
+    "seo_name": "quinta-do-crasto-etiqueta-negra-reserva-2018",
+    "year": "2018",
+    "name": "Quinta do Crasto Etiqueta Negra Reserva 2018",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 0,
+     "ratings_average": 0,
+     "labels_count": 2,
+     "reviews_count": 0
+    }
+   },
+   {
     "id": 150495291,
     "seo_name": "quinta-do-crasto-etiqueta-negra-reserva-2017",
     "year": "2017",
@@ -156,6 +197,19 @@
      "ratings_average": 0,
      "labels_count": 9,
      "reviews_count": 0
+    }
+   },
+   {
+    "id": 2389482,
+    "seo_name": "quinta-do-crasto-etiqueta-negra-reserva-2000",
+    "year": "2000",
+    "name": "Quinta do Crasto Etiqueta Negra Reserva 2000",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 7,
+     "ratings_average": 0,
+     "labels_count": 30,
+     "reviews_count": 4
     }
    }
   ],
@@ -176,6 +230,7 @@
   "name": "Old Vines Tinto",
   "seo_name": "old-vines-tinto",
   "region": {
+   "name": "Douro",
    "country": "pt"
   },
   "vintages": [
@@ -245,6 +300,19 @@
     }
    },
    {
+    "id": 166027559,
+    "seo_name": "javali-old-vines-tinto-2018",
+    "year": "2018",
+    "name": "Quinta do Javali Old Vines Tinto 2018",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 1,
+     "ratings_average": 0,
+     "labels_count": 8,
+     "reviews_count": 0
+    }
+   },
+   {
     "id": 152417297,
     "seo_name": "javali-old-vines-tinto-2017",
     "year": "2017",
@@ -254,6 +322,19 @@
      "ratings_count": 1,
      "ratings_average": 0,
      "labels_count": 7,
+     "reviews_count": 1
+    }
+   },
+   {
+    "id": 5393252,
+    "seo_name": "javali-old-vines-tinto-2000",
+    "year": "2000",
+    "name": "Quinta do Javali Old Vines Tinto 2000",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 1,
+     "ratings_average": 0,
+     "labels_count": 4,
      "reviews_count": 1
     }
    }
@@ -275,6 +356,7 @@
   "name": "Dorna Velha Old Vines",
   "seo_name": "dorna-velha-old-vines",
   "region": {
+   "name": "Douro",
    "country": "pt"
   },
   "vintages": [
@@ -305,6 +387,19 @@
     }
    },
    {
+    "id": 163750099,
+    "seo_name": "silval-dorna-velha-old-vines-2018",
+    "year": "2018",
+    "name": "Quinta do Silval Dorna Velha Old Vines 2018",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 1,
+     "ratings_average": 0,
+     "labels_count": 16,
+     "reviews_count": 0
+    }
+   },
+   {
     "id": 160104998,
     "seo_name": "silval-dorna-velha-old-vines-2017",
     "year": "2017",
@@ -315,6 +410,19 @@
      "ratings_average": 4.2,
      "labels_count": 1128,
      "reviews_count": 41
+    }
+   },
+   {
+    "id": 176701591,
+    "seo_name": "silval-dorna-velha-old-vines-2000",
+    "year": "2000",
+    "name": "Quinta do Silval Dorna Velha Old Vines 2000",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 0,
+     "ratings_average": 0,
+     "labels_count": 1,
+     "reviews_count": 0
     }
    }
   ],
@@ -335,6 +443,7 @@
   "name": "Vinhas Velhas Old Vines",
   "seo_name": "vinhas-velhas-old-vines",
   "region": {
+   "name": "Douro",
    "country": "pt"
   },
   "vintages": [
@@ -378,6 +487,19 @@
     }
    },
    {
+    "id": 169974554,
+    "seo_name": "cume-vinhas-velhas-old-vines-2018",
+    "year": "2018",
+    "name": "Quinta do Cume Vinhas Velhas Old Vines 2018",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 1,
+     "ratings_average": 0,
+     "labels_count": 10,
+     "reviews_count": 0
+    }
+   },
+   {
     "id": 165185592,
     "seo_name": "cume-vinhas-velhas-old-vines-2017",
     "year": "2017",
@@ -408,6 +530,7 @@
   "name": "Reserva Tinto",
   "seo_name": "reserva-tinto",
   "region": {
+   "name": "Douro",
    "country": "pt"
   },
   "vintages": [
@@ -451,6 +574,19 @@
     }
    },
    {
+    "id": 159626095,
+    "seo_name": "quinta-do-crasto-reserva-tinto-2018",
+    "year": "2018",
+    "name": "Quinta do Crasto Reserva Tinto 2018",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 4,
+     "ratings_average": 0,
+     "labels_count": 2,
+     "reviews_count": 1
+    }
+   },
+   {
     "id": 159626123,
     "seo_name": "quinta-do-crasto-reserva-tinto-2017",
     "year": "2017",
@@ -461,6 +597,19 @@
      "ratings_average": 0,
      "labels_count": 3,
      "reviews_count": 1
+    }
+   },
+   {
+    "id": 159932110,
+    "seo_name": "quinta-do-crasto-reserva-tinto-2000",
+    "year": "2000",
+    "name": "Quinta do Crasto Reserva Tinto 2000",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 4,
+     "ratings_average": 0,
+     "labels_count": 19,
+     "reviews_count": 3
     }
    }
   ],

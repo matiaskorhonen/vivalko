@@ -4,6 +4,7 @@
   "name": "Château Malvat Fronsac",
   "seo_name": "chateau-malvat-fronsac",
   "region": {
+   "name": "Fronsac",
    "country": "fr"
   },
   "vintages": [
@@ -21,6 +22,19 @@
     }
    },
    {
+    "id": 183090724,
+    "seo_name": "chateau-villars-chateau-malvat-fronsac-2025",
+    "year": "2025",
+    "name": "Château Villars Château Malvat Fronsac 2025",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 0,
+     "ratings_average": 0,
+     "labels_count": 0,
+     "reviews_count": 0
+    }
+   },
+   {
     "id": 181540624,
     "seo_name": "chateau-villars-chateau-malvat-fronsac-2024",
     "year": "2024",
@@ -30,6 +44,32 @@
      "ratings_count": 0,
      "ratings_average": 0,
      "labels_count": 0,
+     "reviews_count": 0
+    }
+   },
+   {
+    "id": 179184475,
+    "seo_name": "chateau-villars-chateau-malvat-fronsac-2023",
+    "year": "2023",
+    "name": "Château Villars Château Malvat Fronsac 2023",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 1,
+     "ratings_average": 0,
+     "labels_count": 2,
+     "reviews_count": 0
+    }
+   },
+   {
+    "id": 178495161,
+    "seo_name": "chateau-villars-chateau-malvat-fronsac-2022",
+    "year": "2022",
+    "name": "Château Villars Château Malvat Fronsac 2022",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 0,
+     "ratings_average": 0,
+     "labels_count": 2,
      "reviews_count": 0
     }
    },
@@ -44,6 +84,32 @@
      "ratings_average": 3.8,
      "labels_count": 632,
      "reviews_count": 13
+    }
+   },
+   {
+    "id": 152716354,
+    "seo_name": "chateau-villars-chateau-malvat-fronsac-2017",
+    "year": "2017",
+    "name": "Château Villars Château Malvat Fronsac 2017",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 0,
+     "ratings_average": 0,
+     "labels_count": 4,
+     "reviews_count": 0
+    }
+   },
+   {
+    "id": 10862216,
+    "seo_name": "chateau-villars-chateau-malvat-fronsac-2000",
+    "year": "2000",
+    "name": "Château Villars Château Malvat Fronsac 2000",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 3,
+     "ratings_average": 0,
+     "labels_count": 55,
+     "reviews_count": 2
     }
    }
   ],
@@ -64,6 +130,7 @@
   "name": "Merlot - Cabernet Bordeaux",
   "seo_name": "merlot-cabernet-bordeaux",
   "region": {
+   "name": "Bordeaux",
    "country": "fr"
   },
   "vintages": [
@@ -81,6 +148,19 @@
     }
    },
    {
+    "id": 184074390,
+    "seo_name": "malbat-merlot-cabernet-bordeaux-2025",
+    "year": "2025",
+    "name": "Château Malbat Merlot - Cabernet Bordeaux 2025",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 0,
+     "ratings_average": 0,
+     "labels_count": 0,
+     "reviews_count": 0
+    }
+   },
+   {
     "id": 179540207,
     "seo_name": "malbat-merlot-cabernet-bordeaux-2024",
     "year": "2024",
@@ -94,6 +174,32 @@
     }
    },
    {
+    "id": 173818544,
+    "seo_name": "malbat-merlot-cabernet-bordeaux-2023",
+    "year": "2023",
+    "name": "Château Malbat Merlot - Cabernet Bordeaux 2023",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 10,
+     "ratings_average": 0,
+     "labels_count": 112,
+     "reviews_count": 1
+    }
+   },
+   {
+    "id": 170451418,
+    "seo_name": "malbat-merlot-cabernet-bordeaux-2022",
+    "year": "2022",
+    "name": "Château Malbat Merlot - Cabernet Bordeaux 2022",
+    "statistics": {
+     "status": "Normal",
+     "ratings_count": 42,
+     "ratings_average": 3.5,
+     "labels_count": 862,
+     "reviews_count": 14
+    }
+   },
+   {
     "id": 156169323,
     "seo_name": "malbat-merlot-cabernet-bordeaux-2018",
     "year": "2018",
@@ -104,6 +210,32 @@
      "ratings_average": 3.7,
      "labels_count": 4893,
      "reviews_count": 120
+    }
+   },
+   {
+    "id": 152312534,
+    "seo_name": "malbat-merlot-cabernet-bordeaux-2017",
+    "year": "2017",
+    "name": "Château Malbat Merlot - Cabernet Bordeaux 2017",
+    "statistics": {
+     "status": "Normal",
+     "ratings_count": 292,
+     "ratings_average": 3.8,
+     "labels_count": 4755,
+     "reviews_count": 108
+    }
+   },
+   {
+    "id": 66907946,
+    "seo_name": "malbat-merlot-cabernet-bordeaux-2000",
+    "year": "2000",
+    "name": "Château Malbat Merlot - Cabernet Bordeaux 2000",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 2,
+     "ratings_average": 0,
+     "labels_count": 15,
+     "reviews_count": 2
     }
    }
   ],
@@ -124,6 +256,7 @@
   "name": "Bordeaux",
   "seo_name": "bordeaux",
   "region": {
+   "name": "Bordeaux",
    "country": "fr"
   },
   "vintages": [
@@ -154,6 +287,32 @@
     }
    },
    {
+    "id": 173761293,
+    "seo_name": "malbat-bordeaux-2023",
+    "year": "2023",
+    "name": "Château Malbat Bordeaux 2023",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 1,
+     "ratings_average": 0,
+     "labels_count": 7,
+     "reviews_count": 0
+    }
+   },
+   {
+    "id": 171397111,
+    "seo_name": "malbat-bordeaux-2022",
+    "year": "2022",
+    "name": "Château Malbat Bordeaux 2022",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 21,
+     "ratings_average": 0,
+     "labels_count": 419,
+     "reviews_count": 7
+    }
+   },
+   {
     "id": 159491413,
     "seo_name": "malbat-bordeaux-2018",
     "year": "2018",
@@ -164,6 +323,32 @@
      "ratings_average": 3.5,
      "labels_count": 2714,
      "reviews_count": 70
+    }
+   },
+   {
+    "id": 153184851,
+    "seo_name": "malbat-bordeaux-2017",
+    "year": "2017",
+    "name": "Château Malbat Bordeaux 2017",
+    "statistics": {
+     "status": "Normal",
+     "ratings_count": 180,
+     "ratings_average": 3.3,
+     "labels_count": 2218,
+     "reviews_count": 65
+    }
+   },
+   {
+    "id": 2809358,
+    "seo_name": "malbat-bordeaux-2000",
+    "year": "2000",
+    "name": "Château Malbat Bordeaux 2000",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 4,
+     "ratings_average": 0,
+     "labels_count": 56,
+     "reviews_count": 1
     }
    }
   ],
@@ -184,6 +369,7 @@
   "name": "L'Authentique Bordeaux Blanc",
   "seo_name": "l-authentique-bordeaux-blanc",
   "region": {
+   "name": "Bordeaux",
    "country": "fr"
   },
   "vintages": [
@@ -201,6 +387,19 @@
     }
    },
    {
+    "id": 183939097,
+    "seo_name": "malbat-l-authentique-bordeaux-blanc-2025",
+    "year": "2025",
+    "name": "Château Malbat L'Authentique Bordeaux Blanc 2025",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 0,
+     "ratings_average": 0,
+     "labels_count": 0,
+     "reviews_count": 0
+    }
+   },
+   {
     "id": 180795621,
     "seo_name": "malbat-l-authentique-bordeaux-blanc-2024",
     "year": "2024",
@@ -214,6 +413,32 @@
     }
    },
    {
+    "id": 177211708,
+    "seo_name": "malbat-l-authentique-bordeaux-blanc-2023",
+    "year": "2023",
+    "name": "Château Malbat L'Authentique Bordeaux Blanc 2023",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 17,
+     "ratings_average": 0,
+     "labels_count": 75,
+     "reviews_count": 2
+    }
+   },
+   {
+    "id": 171429985,
+    "seo_name": "malbat-l-authentique-bordeaux-blanc-2022",
+    "year": "2022",
+    "name": "Château Malbat L'Authentique Bordeaux Blanc 2022",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 10,
+     "ratings_average": 0,
+     "labels_count": 37,
+     "reviews_count": 4
+    }
+   },
+   {
     "id": 160958277,
     "seo_name": "malbat-l-authentique-bordeaux-blanc-2018",
     "year": "2018",
@@ -224,6 +449,32 @@
      "ratings_average": 3.8,
      "labels_count": 545,
      "reviews_count": 13
+    }
+   },
+   {
+    "id": 158481397,
+    "seo_name": "malbat-l-authentique-bordeaux-blanc-2017",
+    "year": "2017",
+    "name": "Château Malbat L'Authentique Bordeaux Blanc 2017",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 3,
+     "ratings_average": 0,
+     "labels_count": 46,
+     "reviews_count": 0
+    }
+   },
+   {
+    "id": 141791685,
+    "seo_name": "malbat-l-authentique-bordeaux-blanc-2000",
+    "year": "2000",
+    "name": "Château Malbat L'Authentique Bordeaux Blanc 2000",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 0,
+     "ratings_average": 0,
+     "labels_count": 1,
+     "reviews_count": 0
     }
    }
   ],
@@ -244,6 +495,7 @@
   "name": "Larquey Bordeaux",
   "seo_name": "larquey-bordeaux-bordeaux-red-wine",
   "region": {
+   "name": "Bordeaux",
    "country": "fr"
   },
   "vintages": [
@@ -261,6 +513,32 @@
     }
    },
    {
+    "id": 177709876,
+    "seo_name": "malbat-larquey-bordeaux-bordeaux-red-wine-2023",
+    "year": "2023",
+    "name": "Château Malbat Larquey Bordeaux 2023",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 0,
+     "ratings_average": 0,
+     "labels_count": 2,
+     "reviews_count": 0
+    }
+   },
+   {
+    "id": 172741465,
+    "seo_name": "malbat-larquey-bordeaux-bordeaux-red-wine-2022",
+    "year": "2022",
+    "name": "Château Malbat Larquey Bordeaux 2022",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 0,
+     "ratings_average": 0,
+     "labels_count": 6,
+     "reviews_count": 0
+    }
+   },
+   {
     "id": 159073785,
     "seo_name": "malbat-larquey-bordeaux-bordeaux-red-wine-2018",
     "year": "2018",
@@ -271,6 +549,32 @@
      "ratings_average": 4,
      "labels_count": 141,
      "reviews_count": 5
+    }
+   },
+   {
+    "id": 156690051,
+    "seo_name": "malbat-larquey-bordeaux-bordeaux-red-wine-2017",
+    "year": "2017",
+    "name": "Château Malbat Larquey Bordeaux 2017",
+    "statistics": {
+     "status": "Normal",
+     "ratings_count": 148,
+     "ratings_average": 3.9,
+     "labels_count": 726,
+     "reviews_count": 39
+    }
+   },
+   {
+    "id": 143258057,
+    "seo_name": "malbat-larquey-bordeaux-bordeaux-red-wine-2000",
+    "year": "2000",
+    "name": "Château Malbat Larquey Bordeaux 2000",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 0,
+     "ratings_average": 0,
+     "labels_count": 1,
+     "reviews_count": 0
     }
    }
   ],
@@ -291,6 +595,7 @@
   "name": "Optimus Bordeaux",
   "seo_name": "optimus-bordeaux",
   "region": {
+   "name": "Bordeaux",
    "country": "fr"
   },
   "vintages": [
@@ -321,6 +626,32 @@
     }
    },
    {
+    "id": 177181150,
+    "seo_name": "malbat-optimus-bordeaux-2023",
+    "year": "2023",
+    "name": "Château Malbat Optimus Bordeaux 2023",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 1,
+     "ratings_average": 0,
+     "labels_count": 9,
+     "reviews_count": 0
+    }
+   },
+   {
+    "id": 174354632,
+    "seo_name": "malbat-optimus-bordeaux-2022",
+    "year": "2022",
+    "name": "Château Malbat Optimus Bordeaux 2022",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 0,
+     "ratings_average": 0,
+     "labels_count": 51,
+     "reviews_count": 0
+    }
+   },
+   {
     "id": 161637342,
     "seo_name": "malbat-optimus-bordeaux-2018",
     "year": "2018",
@@ -331,6 +662,32 @@
      "ratings_average": 0,
      "labels_count": 49,
      "reviews_count": 1
+    }
+   },
+   {
+    "id": 157996369,
+    "seo_name": "malbat-optimus-bordeaux-2017",
+    "year": "2017",
+    "name": "Château Malbat Optimus Bordeaux 2017",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 5,
+     "ratings_average": 0,
+     "labels_count": 94,
+     "reviews_count": 3
+    }
+   },
+   {
+    "id": 173983227,
+    "seo_name": "malbat-optimus-bordeaux-2000",
+    "year": "2000",
+    "name": "Château Malbat Optimus Bordeaux 2000",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 0,
+     "ratings_average": 0,
+     "labels_count": 1,
+     "reviews_count": 0
     }
    }
   ],

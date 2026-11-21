@@ -1,0 +1,719 @@
+[
+ {
+  "id": 3908,
+  "name": "Pauillac (Premier Grand Cru Classé)",
+  "seo_name": "pauillac-premier-grand-cru-classe-pauillac",
+  "region": {
+   "name": "Pauillac",
+   "country": "fr"
+  },
+  "vintages": [
+   {
+    "id": 1526555,
+    "seo_name": "chateau-lafite-rothschild-pauillac-premier-grand-cru-classe-pauillac-uv",
+    "year": "U.V.",
+    "name": "Château Lafite Rothschild Pauillac (Premier Grand Cru Classé)",
+    "statistics": {
+     "status": "Normal",
+     "ratings_count": 49870,
+     "ratings_average": 4.6,
+     "labels_count": 1359,
+     "reviews_count": 311
+    }
+   },
+   {
+    "id": 182497094,
+    "seo_name": "chateau-lafite-rothschild-pauillac-premier-grand-cru-classe-pauillac-2025",
+    "year": "2025",
+    "name": "Château Lafite Rothschild Pauillac (Premier Grand Cru Classé) 2025",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 9,
+     "ratings_average": 0,
+     "labels_count": 23,
+     "reviews_count": 5
+    }
+   },
+   {
+    "id": 179568561,
+    "seo_name": "chateau-lafite-rothschild-pauillac-premier-grand-cru-classe-pauillac-2024",
+    "year": "2024",
+    "name": "Château Lafite Rothschild Pauillac (Premier Grand Cru Classé) 2024",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 17,
+     "ratings_average": 0,
+     "labels_count": 61,
+     "reviews_count": 8
+    }
+   },
+   {
+    "id": 173651469,
+    "seo_name": "chateau-lafite-rothschild-pauillac-premier-grand-cru-classe-pauillac-2023",
+    "year": "2023",
+    "name": "Château Lafite Rothschild Pauillac (Premier Grand Cru Classé) 2023",
+    "statistics": {
+     "status": "Normal",
+     "ratings_count": 53,
+     "ratings_average": 4.5,
+     "labels_count": 472,
+     "reviews_count": 25
+    }
+   },
+   {
+    "id": 170414678,
+    "seo_name": "chateau-lafite-rothschild-pauillac-premier-grand-cru-classe-pauillac-2022",
+    "year": "2022",
+    "name": "Château Lafite Rothschild Pauillac (Premier Grand Cru Classé) 2022",
+    "statistics": {
+     "status": "Normal",
+     "ratings_count": 79,
+     "ratings_average": 4.4,
+     "labels_count": 1468,
+     "reviews_count": 33
+    }
+   },
+   {
+    "id": 156099353,
+    "seo_name": "chateau-lafite-rothschild-pauillac-premier-grand-cru-classe-pauillac-2018",
+    "year": "2018",
+    "name": "Château Lafite Rothschild Pauillac (Premier Grand Cru Classé) 2018",
+    "statistics": {
+     "status": "Normal",
+     "ratings_count": 364,
+     "ratings_average": 4.6,
+     "labels_count": 6968,
+     "reviews_count": 103
+    }
+   },
+   {
+    "id": 150274866,
+    "seo_name": "chateau-lafite-rothschild-pauillac-premier-grand-cru-classe-pauillac-2017",
+    "year": "2017",
+    "name": "Château Lafite Rothschild Pauillac (Premier Grand Cru Classé) 2017",
+    "statistics": {
+     "status": "Normal",
+     "ratings_count": 487,
+     "ratings_average": 4.5,
+     "labels_count": 8883,
+     "reviews_count": 137
+    }
+   },
+   {
+    "id": 23567,
+    "seo_name": "chateau-lafite-rothschild-pauillac-premier-grand-cru-classe-pauillac-2000",
+    "year": "2000",
+    "name": "Château Lafite Rothschild Pauillac (Premier Grand Cru Classé) 2000",
+    "statistics": {
+     "status": "Normal",
+     "ratings_count": 1396,
+     "ratings_average": 4.7,
+     "labels_count": 15823,
+     "reviews_count": 417
+    }
+   }
+  ],
+  "winery": {
+   "name": "Château Lafite Rothschild",
+   "seo_name": "chateau-lafite-rothschild"
+  },
+  "statistics": {
+   "status": "Normal",
+   "ratings_count": 49870,
+   "labels_count": 581694,
+   "unified_average_ratings": 0,
+   "ratings_average": 4.6
+  }
+ },
+ {
+  "id": 23793,
+  "name": "Carruades de Lafite Pauillac",
+  "seo_name": "carruades-de-lafite-pauillac",
+  "region": {
+   "name": "Pauillac",
+   "country": "fr"
+  },
+  "vintages": [
+   {
+    "id": 1481649,
+    "seo_name": "chateau-lafite-rothschild-carruades-de-lafite-pauillac-uv",
+    "year": "U.V.",
+    "name": "Château Lafite Rothschild Carruades de Lafite Pauillac",
+    "statistics": {
+     "status": "Normal",
+     "ratings_count": 17092,
+     "ratings_average": 4.4,
+     "labels_count": 414,
+     "reviews_count": 82
+    }
+   },
+   {
+    "id": 182406293,
+    "seo_name": "chateau-lafite-rothschild-carruades-de-lafite-pauillac-2025",
+    "year": "2025",
+    "name": "Château Lafite Rothschild Carruades de Lafite Pauillac 2025",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 0,
+     "ratings_average": 0,
+     "labels_count": 0,
+     "reviews_count": 0
+    }
+   },
+   {
+    "id": 179583457,
+    "seo_name": "chateau-lafite-rothschild-carruades-de-lafite-pauillac-2024",
+    "year": "2024",
+    "name": "Château Lafite Rothschild Carruades de Lafite Pauillac 2024",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 1,
+     "ratings_average": 0,
+     "labels_count": 5,
+     "reviews_count": 1
+    }
+   },
+   {
+    "id": 173646771,
+    "seo_name": "chateau-lafite-rothschild-carruades-de-lafite-pauillac-2023",
+    "year": "2023",
+    "name": "Château Lafite Rothschild Carruades de Lafite Pauillac 2023",
+    "statistics": {
+     "status": "Normal",
+     "ratings_count": 25,
+     "ratings_average": 4.3,
+     "labels_count": 351,
+     "reviews_count": 11
+    }
+   },
+   {
+    "id": 170426055,
+    "seo_name": "chateau-lafite-rothschild-carruades-de-lafite-pauillac-2022",
+    "year": "2022",
+    "name": "Château Lafite Rothschild Carruades de Lafite Pauillac 2022",
+    "statistics": {
+     "status": "Normal",
+     "ratings_count": 55,
+     "ratings_average": 4.2,
+     "labels_count": 1164,
+     "reviews_count": 18
+    }
+   },
+   {
+    "id": 156132651,
+    "seo_name": "chateau-lafite-rothschild-carruades-de-lafite-pauillac-2018",
+    "year": "2018",
+    "name": "Château Lafite Rothschild Carruades de Lafite Pauillac 2018",
+    "statistics": {
+     "status": "Normal",
+     "ratings_count": 171,
+     "ratings_average": 4.4,
+     "labels_count": 4542,
+     "reviews_count": 47
+    }
+   },
+   {
+    "id": 150274860,
+    "seo_name": "chateau-lafite-rothschild-carruades-de-lafite-pauillac-2017",
+    "year": "2017",
+    "name": "Château Lafite Rothschild Carruades de Lafite Pauillac 2017",
+    "statistics": {
+     "status": "Normal",
+     "ratings_count": 192,
+     "ratings_average": 4.4,
+     "labels_count": 5222,
+     "reviews_count": 58
+    }
+   },
+   {
+    "id": 1174732,
+    "seo_name": "chateau-lafite-rothschild-carruades-de-lafite-pauillac-2000",
+    "year": "2000",
+    "name": "Château Lafite Rothschild Carruades de Lafite Pauillac 2000",
+    "statistics": {
+     "status": "Normal",
+     "ratings_count": 1416,
+     "ratings_average": 4.4,
+     "labels_count": 19552,
+     "reviews_count": 460
+    }
+   }
+  ],
+  "winery": {
+   "name": "Château Lafite Rothschild",
+   "seo_name": "chateau-lafite-rothschild"
+  },
+  "statistics": {
+   "status": "Normal",
+   "ratings_count": 17092,
+   "labels_count": 274405,
+   "unified_average_ratings": 0,
+   "ratings_average": 4.4
+  }
+ },
+ {
+  "id": 2134756,
+  "name": "Anseillan Pauillac",
+  "seo_name": "anseillan-pauillac",
+  "region": {
+   "name": "Pauillac",
+   "country": "fr"
+  },
+  "vintages": [
+   {
+    "id": 4357030,
+    "seo_name": "chateau-lafite-rothschild-anseillan-pauillac-uv",
+    "year": "U.V.",
+    "name": "Château Lafite Rothschild Anseillan Pauillac",
+    "statistics": {
+     "status": "Normal",
+     "ratings_count": 950,
+     "ratings_average": 4.3,
+     "labels_count": 6,
+     "reviews_count": 13
+    }
+   },
+   {
+    "id": 183590337,
+    "seo_name": "chateau-lafite-rothschild-anseillan-pauillac-2025",
+    "year": "2025",
+    "name": "Château Lafite Rothschild Anseillan Pauillac 2025",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 0,
+     "ratings_average": 0,
+     "labels_count": 0,
+     "reviews_count": 0
+    }
+   },
+   {
+    "id": 181609741,
+    "seo_name": "chateau-lafite-rothschild-anseillan-pauillac-2024",
+    "year": "2024",
+    "name": "Château Lafite Rothschild Anseillan Pauillac 2024",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 0,
+     "ratings_average": 0,
+     "labels_count": 0,
+     "reviews_count": 0
+    }
+   },
+   {
+    "id": 174239833,
+    "seo_name": "chateau-lafite-rothschild-anseillan-pauillac-2023",
+    "year": "2023",
+    "name": "Château Lafite Rothschild Anseillan Pauillac 2023",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 0,
+     "ratings_average": 0,
+     "labels_count": 2,
+     "reviews_count": 0
+    }
+   },
+   {
+    "id": 172599651,
+    "seo_name": "chateau-lafite-rothschild-anseillan-pauillac-2022",
+    "year": "2022",
+    "name": "Château Lafite Rothschild Anseillan Pauillac 2022",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 0,
+     "ratings_average": 0,
+     "labels_count": 3,
+     "reviews_count": 0
+    }
+   },
+   {
+    "id": 171539235,
+    "seo_name": "chateau-lafite-rothschild-anseillan-pauillac-2018",
+    "year": "2018",
+    "name": "Château Lafite Rothschild Anseillan Pauillac 2018",
+    "statistics": {
+     "status": "Normal",
+     "ratings_count": 374,
+     "ratings_average": 4.3,
+     "labels_count": 3536,
+     "reviews_count": 101
+    }
+   },
+   {
+    "id": 172780974,
+    "seo_name": "chateau-lafite-rothschild-anseillan-pauillac-2017",
+    "year": "2017",
+    "name": "Château Lafite Rothschild Anseillan Pauillac 2017",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 0,
+     "ratings_average": 0,
+     "labels_count": 3,
+     "reviews_count": 0
+    }
+   },
+   {
+    "id": 159340799,
+    "seo_name": "chateau-lafite-rothschild-anseillan-pauillac-2000",
+    "year": "2000",
+    "name": "Château Lafite Rothschild Anseillan Pauillac 2000",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 2,
+     "ratings_average": 0,
+     "labels_count": 3,
+     "reviews_count": 0
+    }
+   }
+  ],
+  "winery": {
+   "name": "Château Lafite Rothschild",
+   "seo_name": "chateau-lafite-rothschild"
+  },
+  "statistics": {
+   "status": "Normal",
+   "ratings_count": 950,
+   "labels_count": 8560,
+   "unified_average_ratings": 0,
+   "ratings_average": 4.3
+  }
+ },
+ {
+  "id": 1893348,
+  "name": "Château de Small Lafee Bordeaux",
+  "seo_name": "chateau-de-small-lafee-bordeaux",
+  "region": {
+   "name": "Bordeaux",
+   "country": "fr"
+  },
+  "vintages": [
+   {
+    "id": 4263191,
+    "seo_name": "barons-de-rothschild-lafite-chateau-de-small-lafee-bordeaux-uv",
+    "year": "U.V.",
+    "name": "Barons de Rothschild (Lafite) Château de Small Lafee Bordeaux",
+    "statistics": {
+     "status": "Normal",
+     "ratings_count": 136,
+     "ratings_average": 3.7,
+     "labels_count": 3,
+     "reviews_count": 0
+    }
+   },
+   {
+    "id": 184291290,
+    "seo_name": "barons-de-rothschild-lafite-chateau-de-small-lafee-bordeaux-2025",
+    "year": "2025",
+    "name": "Barons de Rothschild (Lafite) Château de Small Lafee Bordeaux 2025",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 0,
+     "ratings_average": 0,
+     "labels_count": 0,
+     "reviews_count": 0
+    }
+   },
+   {
+    "id": 182492945,
+    "seo_name": "barons-de-rothschild-lafite-chateau-de-small-lafee-bordeaux-2024",
+    "year": "2024",
+    "name": "Barons de Rothschild (Lafite) Château de Small Lafee Bordeaux 2024",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 1,
+     "ratings_average": 0,
+     "labels_count": 3,
+     "reviews_count": 0
+    }
+   },
+   {
+    "id": 182647006,
+    "seo_name": "barons-de-rothschild-lafite-chateau-de-small-lafee-bordeaux-2023",
+    "year": "2023",
+    "name": "Barons de Rothschild (Lafite) Château de Small Lafee Bordeaux 2023",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 0,
+     "ratings_average": 0,
+     "labels_count": 3,
+     "reviews_count": 0
+    }
+   },
+   {
+    "id": 176588672,
+    "seo_name": "barons-de-rothschild-lafite-chateau-de-small-lafee-bordeaux-2022",
+    "year": "2022",
+    "name": "Barons de Rothschild (Lafite) Château de Small Lafee Bordeaux 2022",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 0,
+     "ratings_average": 0,
+     "labels_count": 15,
+     "reviews_count": 0
+    }
+   },
+   {
+    "id": 156345687,
+    "seo_name": "barons-de-rothschild-lafite-chateau-de-small-lafee-bordeaux-2018",
+    "year": "2018",
+    "name": "Barons de Rothschild (Lafite) Château de Small Lafee Bordeaux 2018",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 2,
+     "ratings_average": 0,
+     "labels_count": 136,
+     "reviews_count": 1
+    }
+   },
+   {
+    "id": 150500353,
+    "seo_name": "barons-de-rothschild-lafite-chateau-de-small-lafee-bordeaux-2017",
+    "year": "2017",
+    "name": "Barons de Rothschild (Lafite) Château de Small Lafee Bordeaux 2017",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 8,
+     "ratings_average": 0,
+     "labels_count": 171,
+     "reviews_count": 4
+    }
+   },
+   {
+    "id": 5157449,
+    "seo_name": "barons-de-rothschild-lafite-chateau-de-small-lafee-bordeaux-2000",
+    "year": "2000",
+    "name": "Barons de Rothschild (Lafite) Château de Small Lafee Bordeaux 2000",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 4,
+     "ratings_average": 0,
+     "labels_count": 102,
+     "reviews_count": 1
+    }
+   }
+  ],
+  "winery": {
+   "name": "Barons de Rothschild (Lafite)",
+   "seo_name": "barons-de-rothschild-lafite"
+  },
+  "statistics": {
+   "status": "Normal",
+   "ratings_count": 136,
+   "labels_count": 2708,
+   "unified_average_ratings": 0,
+   "ratings_average": 3.7
+  }
+ },
+ {
+  "id": 1839756,
+  "name": "Château Angel Grand Cru Classé",
+  "seo_name": "chateau-angel-grand-cru-classe",
+  "region": {
+   "name": "Bordeaux",
+   "country": "fr"
+  },
+  "vintages": [
+   {
+    "id": 4958347,
+    "seo_name": "barons-de-rothschild-lafite-chateau-angel-grand-cru-classe-uv",
+    "year": "U.V.",
+    "name": "Barons de Rothschild (Lafite) Château Angel Grand Cru Classé",
+    "statistics": {
+     "status": "Normal",
+     "ratings_count": 48,
+     "ratings_average": 3.5,
+     "labels_count": 8,
+     "reviews_count": 0
+    }
+   },
+   {
+    "id": 180680700,
+    "seo_name": "barons-de-rothschild-lafite-chateau-angel-grand-cru-classe-2024",
+    "year": "2024",
+    "name": "Barons de Rothschild (Lafite) Château Angel Grand Cru Classé 2024",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 0,
+     "ratings_average": 0,
+     "labels_count": 0,
+     "reviews_count": 0
+    }
+   },
+   {
+    "id": 180435021,
+    "seo_name": "barons-de-rothschild-lafite-chateau-angel-grand-cru-classe-2022",
+    "year": "2022",
+    "name": "Barons de Rothschild (Lafite) Château Angel Grand Cru Classé 2022",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 0,
+     "ratings_average": 0,
+     "labels_count": 1,
+     "reviews_count": 0
+    }
+   },
+   {
+    "id": 165956865,
+    "seo_name": "barons-de-rothschild-lafite-chateau-angel-grand-cru-classe-2018",
+    "year": "2018",
+    "name": "Barons de Rothschild (Lafite) Château Angel Grand Cru Classé 2018",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 0,
+     "ratings_average": 0,
+     "labels_count": 8,
+     "reviews_count": 0
+    }
+   },
+   {
+    "id": 165465664,
+    "seo_name": "barons-de-rothschild-lafite-chateau-angel-grand-cru-classe-2017",
+    "year": "2017",
+    "name": "Barons de Rothschild (Lafite) Château Angel Grand Cru Classé 2017",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 0,
+     "ratings_average": 0,
+     "labels_count": 10,
+     "reviews_count": 0
+    }
+   },
+   {
+    "id": 6511217,
+    "seo_name": "barons-de-rothschild-lafite-chateau-angel-grand-cru-classe-2000",
+    "year": "2000",
+    "name": "Barons de Rothschild (Lafite) Château Angel Grand Cru Classé 2000",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 0,
+     "ratings_average": 0,
+     "labels_count": 30,
+     "reviews_count": 0
+    }
+   }
+  ],
+  "winery": {
+   "name": "Barons de Rothschild (Lafite)",
+   "seo_name": "barons-de-rothschild-lafite"
+  },
+  "statistics": {
+   "status": "Normal",
+   "ratings_count": 48,
+   "labels_count": 1249,
+   "unified_average_ratings": 0,
+   "ratings_average": 3.5
+  }
+ },
+ {
+  "id": 7077451,
+  "name": "Chateau Lafite Caro Lafitl Merlot Bordeaux Supérieur",
+  "seo_name": "chateau-lafite-caro-lafitl-merlot-bordeaux-superieur",
+  "region": {
+   "name": "Bordeaux Supérieur",
+   "country": "fr"
+  },
+  "vintages": [
+   {
+    "id": 159722815,
+    "seo_name": "barons-de-rothschild-lafite-chateau-lafite-caro-lafitl-merlot-bordeaux-superieur-uv",
+    "year": "U.V.",
+    "name": "Barons de Rothschild (Lafite) Chateau Lafite Caro Lafitl Merlot Bordeaux Supérieur",
+    "statistics": {
+     "status": "Normal",
+     "ratings_count": 46,
+     "ratings_average": 3.9,
+     "labels_count": 0,
+     "reviews_count": 0
+    }
+   },
+   {
+    "id": 181524019,
+    "seo_name": "barons-de-rothschild-lafite-chateau-lafite-caro-lafitl-merlot-bordeaux-superieur-2024",
+    "year": "2024",
+    "name": "Barons de Rothschild (Lafite) Chateau Lafite Caro Lafitl Merlot Bordeaux Supérieur 2024",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 0,
+     "ratings_average": 0,
+     "labels_count": 0,
+     "reviews_count": 0
+    }
+   },
+   {
+    "id": 179779442,
+    "seo_name": "barons-de-rothschild-lafite-chateau-lafite-caro-lafitl-merlot-bordeaux-superieur-2023",
+    "year": "2023",
+    "name": "Barons de Rothschild (Lafite) Chateau Lafite Caro Lafitl Merlot Bordeaux Supérieur 2023",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 0,
+     "ratings_average": 0,
+     "labels_count": 2,
+     "reviews_count": 0
+    }
+   },
+   {
+    "id": 172324895,
+    "seo_name": "barons-de-rothschild-lafite-chateau-lafite-caro-lafitl-merlot-bordeaux-superieur-2022",
+    "year": "2022",
+    "name": "Barons de Rothschild (Lafite) Chateau Lafite Caro Lafitl Merlot Bordeaux Supérieur 2022",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 0,
+     "ratings_average": 0,
+     "labels_count": 5,
+     "reviews_count": 0
+    }
+   },
+   {
+    "id": 160035688,
+    "seo_name": "barons-de-rothschild-lafite-chateau-lafite-caro-lafitl-merlot-bordeaux-superieur-2018",
+    "year": "2018",
+    "name": "Barons de Rothschild (Lafite) Chateau Lafite Caro Lafitl Merlot Bordeaux Supérieur 2018",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 5,
+     "ratings_average": 0,
+     "labels_count": 127,
+     "reviews_count": 3
+    }
+   },
+   {
+    "id": 159827971,
+    "seo_name": "barons-de-rothschild-lafite-chateau-lafite-caro-lafitl-merlot-bordeaux-superieur-2017",
+    "year": "2017",
+    "name": "Barons de Rothschild (Lafite) Chateau Lafite Caro Lafitl Merlot Bordeaux Supérieur 2017",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 6,
+     "ratings_average": 0,
+     "labels_count": 148,
+     "reviews_count": 3
+    }
+   },
+   {
+    "id": 159881569,
+    "seo_name": "barons-de-rothschild-lafite-chateau-lafite-caro-lafitl-merlot-bordeaux-superieur-2000",
+    "year": "2000",
+    "name": "Barons de Rothschild (Lafite) Chateau Lafite Caro Lafitl Merlot Bordeaux Supérieur 2000",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 1,
+     "ratings_average": 0,
+     "labels_count": 11,
+     "reviews_count": 1
+    }
+   }
+  ],
+  "winery": {
+   "name": "Barons de Rothschild (Lafite)",
+   "seo_name": "barons-de-rothschild-lafite"
+  },
+  "statistics": {
+   "status": "Normal",
+   "ratings_count": 46,
+   "labels_count": 1143,
+   "unified_average_ratings": 0,
+   "ratings_average": 3.9
+  }
+ }
+]

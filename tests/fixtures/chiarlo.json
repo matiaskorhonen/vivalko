@@ -4,6 +4,7 @@
   "name": "Cipressi Nizza",
   "seo_name": "cipressi-nizza-nizza",
   "region": {
+   "name": "Nizza",
    "country": "it"
   },
   "vintages": [
@@ -73,6 +74,19 @@
     }
    },
    {
+    "id": 156817357,
+    "seo_name": "michele-chiarlo-cipressi-nizza-nizza-2018",
+    "year": "2018",
+    "name": "Michele Chiarlo Cipressi Nizza 2018",
+    "statistics": {
+     "status": "Normal",
+     "ratings_count": 919,
+     "ratings_average": 3.9,
+     "labels_count": 7118,
+     "reviews_count": 300
+    }
+   },
+   {
     "id": 153313873,
     "seo_name": "michele-chiarlo-cipressi-nizza-nizza-2017",
     "year": "2017",
@@ -83,6 +97,19 @@
      "ratings_average": 3.9,
      "labels_count": 9270,
      "reviews_count": 399
+    }
+   },
+   {
+    "id": 167435883,
+    "seo_name": "michele-chiarlo-cipressi-nizza-nizza-2000",
+    "year": "2000",
+    "name": "Michele Chiarlo Cipressi Nizza 2000",
+    "statistics": {
+     "status": "BelowThreshold",
+     "ratings_count": 0,
+     "ratings_average": 0,
+     "labels_count": 14,
+     "reviews_count": 0
     }
    }
   ],

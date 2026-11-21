@@ -25,7 +25,7 @@ export interface VivinoHit {
   name: string;
   seo_name?: string;
   winery?: { name: string; seo_name?: string } | null;
-  region?: { country?: string } | null;
+  region?: { country?: string; name?: string } | null;
   statistics?: Statistics | null;
   vintages?: { id: number; year: string; name: string; statistics?: Statistics | null }[];
 }
@@ -46,7 +46,7 @@ export async function searchVivino(
       hitsPerPage: 6,
       attributesToRetrieve: [
         'id', 'name', 'seo_name', 'winery.name', 'winery.seo_name',
-        'region.country', 'statistics', 'vintages',
+        'region.country', 'region.name', 'statistics', 'vintages',
       ],
       attributesToHighlight: [],
     }),
@@ -55,6 +55,11 @@ export async function searchVivino(
   const data = (await res.json()) as { hits?: VivinoHit[] };
   return data.hits ?? [];
 }
+
+/** Classification terms that are part of many wine names without identifying the wine. */
+const CLASSIFICATION_WORDS = [
+  'premier', '1er', 'grand', 'cru', 'classe', 'superiore', 'superieur', 'doc', 'docg', 'aoc', 'aop',
+];
 
 /** Share of `needles` that appear in `haystack`. 0 when there are no needles. */
 function coverage(needles: string[], haystack: Set<string>): number {
@@ -67,8 +72,13 @@ export interface ScoredHit {
   score: number;
   /** Share of Vivino's producer words that appear in the Alko name. */
   wineryCoverage: number;
-  /** Share of Vivino's wine-name words that appear in the Alko name. */
+  /**
+   * Share of Vivino's distinctive wine-name words that appear in the Alko name.
+   * 1 when the wine name has none (e.g. a château's grand vin named after its appellation).
+   */
   nameCoverage: number;
+  /** Number of distinctive words in Vivino's wine name. */
+  nameTokenCount: number;
   /** Share of the Alko name's words that appear anywhere in Vivino's producer + wine name. */
   alkoCoverage: number;
   countryMismatch: boolean;
@@ -78,11 +88,21 @@ export function scoreHit(product: AlkoProduct, hit: VivinoHit): ScoredHit {
   const alkoTokens = significantTokens(toSearchQuery(product.name));
   const alko = new Set(alkoTokens);
   const wineryTokens = significantTokens(hit.winery?.name ?? '');
-  const nameTokens = significantTokens(hit.name);
-  const vivino = new Set([...wineryTokens, ...nameTokens]);
+  const allNameTokens = significantTokens(hit.name);
+  const vivino = new Set([...wineryTokens, ...allNameTokens]);
+
+  // Vivino often names a wine after its appellation or repeats the producer
+  // ("Carruades de Lafite Pauillac" by Château Lafite Rothschild). Those words
+  // say nothing about which of the producer's wines it is.
+  const generic = new Set([
+    ...wineryTokens,
+    ...significantTokens(hit.region?.name ?? ''),
+    ...CLASSIFICATION_WORDS,
+  ]);
+  const nameTokens = allNameTokens.filter((t) => !generic.has(t));
 
   const wineryCoverage = coverage(wineryTokens, alko);
-  const nameCoverage = coverage(nameTokens, alko);
+  const nameCoverage = nameTokens.length === 0 ? 1 : coverage(nameTokens, alko);
   const alkoCoverage = coverage(alkoTokens, vivino);
 
   const expected = countryCode(product.country);
@@ -90,7 +110,9 @@ export function scoreHit(product: AlkoProduct, hit: VivinoHit): ScoredHit {
   const countryMismatch = !!expected && !!actual && expected !== actual;
 
   const score = 2 * wineryCoverage + nameCoverage + alkoCoverage + (expected === actual ? 0.5 : 0);
-  return { hit, score, wineryCoverage, nameCoverage, alkoCoverage, countryMismatch };
+  return {
+    hit, score, wineryCoverage, nameCoverage, nameTokenCount: nameTokens.length, alkoCoverage, countryMismatch,
+  };
 }
 
 /**
@@ -102,7 +124,7 @@ function isPlausible(s: ScoredHit, rank: number): boolean {
   // Every producer word is in the Alko name ("Quinta do Crasto ...").
   if (s.wineryCoverage === 1) return true;
   // Part of the producer plus the full, multi-word wine name.
-  if (s.wineryCoverage >= 0.5 && s.nameCoverage === 1 && significantTokens(s.hit.name).length >= 2) {
+  if (s.wineryCoverage >= 0.5 && s.nameCoverage === 1 && s.nameTokenCount >= 2) {
     return true;
   }
   // Alko sometimes names the wine without its producer ("Château Malvat" is made by
