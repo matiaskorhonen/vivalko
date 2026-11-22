@@ -68,4 +68,9 @@ export interface GrapesRequest {
   ids: number[];
 }
 
-export type Message = LookupRequest | ImageRequest | GrapesRequest;
+/** Tells the background worker Vivalko is running in the sender's tab, so its toolbar icon turns red. */
+export interface ActiveMessage {
+  type: 'vivalko:active';
+}
+
+export type Message = LookupRequest | ImageRequest | GrapesRequest | ActiveMessage;

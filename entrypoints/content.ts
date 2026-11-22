@@ -15,6 +15,12 @@ export default defineContentScript({
   async main(ctx) {
     if (!(await enabledSetting.getValue())) return;
 
+    // Turn the toolbar icon red. Browsers may reset tab icons on client-side navigations
+    // too, so repeat it whenever Alko's Next.js router changes the URL.
+    const markActive = () => void browser.runtime.sendMessage({ type: 'vivalko:active' } satisfies Message).catch(() => {});
+    markActive();
+    ctx.addEventListener(window, 'wxt:locationchange', markActive);
+
     // Alko's product API is only reachable from the page itself (the site's firewall
     // blocks other clients), so catalog details are fetched here, not in the background.
     const alkoLimit = createLimiter(3);
