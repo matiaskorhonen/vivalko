@@ -13,10 +13,12 @@
     "zip:firefox": "wxt zip -b firefox",
     "compile": "tsc --noEmit",
     "postinstall": "wxt prepare",
-    "test": "vitest run"
+    "test": "vitest run",
+    "screenshots": "wxt build && node scripts/store-screenshots.ts"
   },
   "devDependencies": {
     "happy-dom": "^21.0.4",
+    "playwright": "^1.65.1",
     "typescript": "^5.9.3",
     "vite": "^8.1.5",
     "vitest": "^5.1.1",
