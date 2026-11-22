@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "description": "Shows Vivino ratings for wines on Alko.fi",
+  "license": "MIT",
   "type": "module",
   "scripts": {
     "dev": "wxt",

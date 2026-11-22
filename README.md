@@ -37,3 +37,7 @@ pnpm zip            # store-ready zip
 ```
 
 The test fixtures in `tests/fixtures/` are recorded Vivino search responses.
+
+## License
+
+[MIT](LICENSE)
