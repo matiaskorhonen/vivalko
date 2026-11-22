@@ -14,6 +14,10 @@ export default defineConfig({
           // Wine names and producers shown on Alko's pages are sent to Vivino to look up ratings.
           data_collection_permissions: { required: ['websiteContent'] },
         },
+        // Firefox for Android only gained data_collection_permissions in 142.
+        gecko_android: {
+          strict_min_version: '142.0',
+        },
       },
     }),
     permissions: ['storage'],
