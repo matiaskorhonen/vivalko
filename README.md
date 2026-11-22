@@ -36,6 +36,17 @@ pnpm build          # .output/chrome-mv3
 pnpm zip            # store-ready zip
 ```
 
+### Safari
+
+Safari extensions ship inside a macOS/iOS app. The Xcode project in `safari/Vivalko` was generated with `xcrun safari-web-extension-packager` and references the files in `.output/safari-mv3` instead of copying them, so build first:
+
+```bash
+pnpm build:safari   # .output/safari-mv3
+pnpm xcode          # build, then open the Xcode project
+```
+
+In Xcode, run the "Vivalko (macOS)" or "Vivalko (iOS)" scheme, then enable the extension in Safari's settings. Unsigned builds need Develop → Developer Settings → "Allow unsigned extensions". Archive from Xcode to submit to the App Store; keep `MARKETING_VERSION` in the project in step with `package.json`.
+
 The test fixtures in `tests/fixtures/` are recorded Vivino search responses.
 
 ## License
