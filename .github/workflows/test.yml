@@ -34,3 +34,6 @@ jobs:
 
       - name: Test
         run: pnpm test
+
+      - name: Build userscript
+        run: pnpm build:userscript

@@ -47,6 +47,18 @@ pnpm xcode          # build, then open the Xcode project
 
 In Xcode, run the "Vivalko (macOS)" or "Vivalko (iOS)" scheme, then enable the extension in Safari's settings. Unsigned builds need Develop → Developer Settings → "Allow unsigned extensions". Archive from Xcode to submit to the App Store; keep `MARKETING_VERSION` in the project in step with `package.json`.
 
+### Userscript
+
+Vivalko also builds as a single userscript for [Userscripts](https://github.com/quoid/userscripts) (Safari), Tampermonkey or Violentmonkey:
+
+```bash
+pnpm build:userscript   # .output/userscript/vivalko.user.js
+```
+
+It shares the page code (`utils/decorate.ts`) and the Vivino lookups (`utils/service.ts`) with the extension. The entry point and the parts that stand in for the extension APIs are in `userscript/`: `GM.xmlHttpRequest` replaces the background worker's cross-origin requests, and GM storage replaces `browser.storage`, through an alias for `wxt/utils/storage`. The metadata block is generated in `userscript/vite.config.ts`. Keep its `@match` and `@connect` lines in step with the manifest.
+
+The userscript has no toolbar icon or popup. To turn it off, disable it in the userscript manager. Each tab runs its own lookups, but cached ratings are shared.
+
 The test fixtures in `tests/fixtures/` are recorded Vivino search responses.
 
 ## License
